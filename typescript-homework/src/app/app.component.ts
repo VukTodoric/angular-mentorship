@@ -45,7 +45,10 @@ export class AppComponent implements OnInit {
     'Branko',
     'branko@nesto.com',
     251454,
-    'Nemanjina'
+    'Nemanjina',
+    13,
+    'Beograd',
+    'Serbia'
   );
 
   ngOnInit(): void {

@@ -1,11 +1,18 @@
-export class Customer {
+import { Address } from './address';
+
+export class Customer extends Address {
   constructor(
     private id: number,
     private name: string,
     private email: string,
     private phone: number,
-    private address: string
-  ) {}
+    street: string,
+    houseNumber: number,
+    city: string,
+    country: string
+  ) {
+    super(street, houseNumber, city, country);
+  }
 
   customerInformation() {
     return (
