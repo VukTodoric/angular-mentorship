@@ -60,6 +60,7 @@ export class AppComponent implements OnInit {
     console.log('Employee 2 ->', this.empolyee2);
 
     console.log(this.customer1.customerInformation());
+    console.log(this.customer1.getName());
   }
 
   printInformation(arr: Candidate[]) {

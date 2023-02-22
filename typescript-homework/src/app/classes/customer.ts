@@ -18,4 +18,8 @@ export class Customer {
       '.'
     );
   }
+
+  getName() {
+    return this.name;
+  }
 }
