@@ -27,5 +27,11 @@ export class AppComponent implements OnInit {
     console.log('Canditate 2 is ->', this.candidate2);
 
     console.log('Array of candidates', this.candidatesArray);
+
+    console.log(this.printInformation(this.candidatesArray));
+  }
+
+  printInformation(arr: Candidate[]) {
+    return arr;
   }
 }
