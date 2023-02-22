@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Candidate } from './classes/candidate';
 import { Customer } from './classes/customer';
 import { Employee } from './classes/employee';
+import { Product } from './classes/product';
 import { User } from './classes/user';
 
 @Component({
@@ -91,6 +92,12 @@ export class AppComponent implements OnInit {
     'direktor'
   );
 
+  product1: Product = new Product(1, 'Chips', 100, 'grickalica');
+  product2: Product = new Product(2, 'Smoki', 100, 'grickalica');
+  product3: Product = new Product(3, 'Kroasan', 100, 'dezert');
+  product4: Product = new Product(4, 'Sladoled', 100, 'slatkis');
+  product5: Product = new Product(5, 'Medeno srce', 100, 'slatkis');
+
   ngOnInit(): void {
     console.log('Canditate 1 is ->', this.candidate1);
     console.log('Canditate 2 is ->', this.candidate2);
@@ -113,6 +120,12 @@ export class AppComponent implements OnInit {
 
     console.log(this.newEmployee1);
     console.log(this.newEmployee2);
+
+    console.log(this.product1);
+    console.log(this.product2);
+    console.log(this.product3);
+    console.log(this.product4);
+    console.log(this.product5);
   }
 
   printInformation(arr: Candidate[]) {
