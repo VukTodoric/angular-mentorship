@@ -1,17 +1,26 @@
 import { Address } from './address';
+import { User } from './user';
 
-export class Customer extends Address {
+export class Customer extends User implements Address {
+  street: string = '';
+  houseNumber: number = 0;
+  city: string = '';
+  country: string = '';
   constructor(
-    private id: number,
-    private name: string,
-    private email: string,
-    private phone: number,
+    id: number,
+    name: string,
+    email: string,
+    phone: number,
     street: string,
     houseNumber: number,
     city: string,
     country: string
   ) {
-    super(street, houseNumber, city, country);
+    super(id, name, email, phone);
+    street = this.street;
+    houseNumber = this.houseNumber;
+    city = this.city;
+    country = this.country;
   }
 
   customerInformation() {
