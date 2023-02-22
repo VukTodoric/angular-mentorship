@@ -20,8 +20,12 @@ export class AppComponent implements OnInit {
     new Date('1992-02-02')
   );
 
+  candidatesArray: Candidate[] = [this.candidate1, this.candidate2];
+
   ngOnInit(): void {
     console.log('Canditate 1 is ->', this.candidate1);
     console.log('Canditate 2 is ->', this.candidate2);
+
+    console.log('Array of candidates', this.candidatesArray);
   }
 }
