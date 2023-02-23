@@ -5,6 +5,7 @@ import { Employee } from './classes/employee';
 import { Product } from './classes/product';
 import { User } from './classes/user';
 import { BaseEntity } from './interfaces/baseEntity';
+import { Book } from './interfaces/book';
 import { Post } from './interfaces/post';
 
 @Component({
@@ -140,6 +141,26 @@ export class AppComponent implements OnInit {
     numberOfLikes: 3,
   };
 
+  bookInstance1: Book = {
+    id: 1,
+    title: 'Knjiga 1',
+    description: 'Nesto o lepop stivu',
+    dateCreated: new Date(),
+    author: 'Peter Petrovic',
+    numberOfStars: '5',
+    category: 'drama',
+  };
+
+  bookInstance2: Book = {
+    id: 2,
+    title: 'Knjiga 2',
+    description: 'Nesto o lepop stivu',
+    dateCreated: new Date(),
+    author: 'Marko Miljanov',
+    numberOfStars: '5',
+    category: 'istorija',
+  };
+
   ngOnInit(): void {
     console.log('Canditate 1 is ->', this.candidate1);
     console.log('Canditate 2 is ->', this.candidate2);
@@ -182,6 +203,9 @@ export class AppComponent implements OnInit {
 
     console.log(this.postInstance1);
     console.log(this.postInstance2);
+
+    console.log(this.bookInstance1);
+    console.log(this.bookInstance2);
   }
 
   printInformation(arr: Candidate[]) {
