@@ -4,6 +4,7 @@ import { Customer } from './classes/customer';
 import { Employee } from './classes/employee';
 import { Product } from './classes/product';
 import { User } from './classes/user';
+import { DateFormats } from './enums/date-formats';
 import { BaseEntity } from './interfaces/baseEntity';
 import { Book } from './interfaces/book';
 import { Job } from './interfaces/job';
@@ -216,9 +217,31 @@ export class AppComponent implements OnInit {
 
     console.log(this.jobInstance1.getSalary());
     console.log(this.jobInstance2.getSalary());
+
+    this.formatDate(new Date(), 0);
+    this.formatDate(new Date(), 1);
+    this.formatDate(new Date(), 2);
   }
 
   printInformation(candidateArr: Candidate[]) {
     return candidateArr.map((res) => `${res.getFullName()} : ${res.birthday}`);
+  }
+
+  formatDate(dateInput: Date, formatOfDate: DateFormats) {
+    let date = dateInput.getDate();
+    let month = dateInput.getMonth();
+    let year = dateInput.getFullYear();
+
+    switch (formatOfDate) {
+      case 0:
+        console.log(`Formatira datum yyyy-mm-dd: ${year}-${month}-${date}`);
+        break;
+      case 1:
+        console.log(`Formatira datum dd/mm/yyyy: ${date}-${month}-${year}`);
+        break;
+      case 2:
+        console.log(`Formatira datum mm-dd-yyyy: ${month}-${date}-${year}`);
+        break;
+    }
   }
 }
