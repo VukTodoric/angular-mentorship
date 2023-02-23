@@ -6,6 +6,7 @@ import { Product } from './classes/product';
 import { User } from './classes/user';
 import { BaseEntity } from './interfaces/baseEntity';
 import { Book } from './interfaces/book';
+import { Job } from './interfaces/job';
 import { Post } from './interfaces/post';
 
 @Component({
@@ -161,6 +162,21 @@ export class AppComponent implements OnInit {
     category: 'istorija',
   };
 
+  jobInstance1: Job = {
+    id: 1,
+    title: 'Zidar',
+    description: 'Zida zgrade',
+    workHours: 45,
+    pricePerHour: 15,
+  };
+
+  jobInstance2: Job = {
+    id: 1,
+    title: 'Moler',
+    description: 'Kreci zidove',
+    workHours: 45,
+    pricePerHour: 11,
+  };
   ngOnInit(): void {
     console.log('Canditate 1 is ->', this.candidate1);
     console.log('Canditate 2 is ->', this.candidate2);
@@ -206,6 +222,9 @@ export class AppComponent implements OnInit {
 
     console.log(this.bookInstance1);
     console.log(this.bookInstance2);
+
+    console.log(this.jobInstance1);
+    console.log(this.jobInstance2);
   }
 
   printInformation(arr: Candidate[]) {
