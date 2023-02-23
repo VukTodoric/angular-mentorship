@@ -6,6 +6,7 @@ export class Customer extends User implements Address {
   houseNumber: number = 0;
   city: string = '';
   country: string = '';
+
   constructor(
     id: number,
     name: string,
@@ -24,15 +25,7 @@ export class Customer extends User implements Address {
   }
 
   customerInformation() {
-    return (
-      'My name is ' +
-      this.name +
-      '. You can contact me via email ' +
-      this.email +
-      ' or phone ' +
-      this.phone +
-      '.'
-    );
+    return `My name is ${this.name}. You can contact me via email ${this.email} or phone ${this.phone}.`;
   }
 
   getName() {
