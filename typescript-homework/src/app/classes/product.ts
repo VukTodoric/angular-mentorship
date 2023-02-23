@@ -1,4 +1,6 @@
-export class Product {
+import { BaseEntity } from '../interfaces/baseEntity';
+
+export class Product implements BaseEntity {
   constructor(
     readonly id: number,
     readonly title: string,

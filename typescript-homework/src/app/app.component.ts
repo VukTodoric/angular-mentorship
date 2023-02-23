@@ -4,6 +4,7 @@ import { Customer } from './classes/customer';
 import { Employee } from './classes/employee';
 import { Product } from './classes/product';
 import { User } from './classes/user';
+import { BaseEntity } from './interfaces/baseEntity';
 
 @Component({
   selector: 'app-root',
@@ -98,6 +99,30 @@ export class AppComponent implements OnInit {
   product4: Product = new Product(4, 'Sladoled', 100, 'slatkis');
   product5: Product = new Product(5, 'Medeno srce', 100, 'slatkis');
 
+  newProduct1: Product = new Product(1, 'Kinder jaje', 100, 'slatkis');
+  newUser1: User = new User(1, 'Novica', 'novica@nesto.com', 6645);
+  newCustomer3: Customer = new Customer(
+    1,
+    'Blagoje',
+    'blagoje@nesto.com',
+    54545,
+    'Dubrovacka',
+    123,
+    'Uzice',
+    'Serbia'
+  );
+  newEmployee3: Employee = new Employee(
+    1,
+    'Rade',
+    'rade@nesto.com',
+    54544,
+    'HR'
+  );
+  obj: BaseEntity = {
+    id: 1,
+  };
+  //An Interface cannot be instantiated, a class can be instantiated.
+
   ngOnInit(): void {
     console.log('Canditate 1 is ->', this.candidate1);
     console.log('Canditate 2 is ->', this.candidate2);
@@ -126,6 +151,12 @@ export class AppComponent implements OnInit {
     console.log(this.product3);
     console.log(this.product4);
     console.log(this.product5);
+
+    console.log(this.newProduct1);
+    console.log(this.newUser1);
+    console.log(this.newCustomer3);
+    console.log(this.newEmployee3);
+    console.log(this.obj);
   }
 
   printInformation(arr: Candidate[]) {
