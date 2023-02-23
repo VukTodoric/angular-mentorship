@@ -9,6 +9,7 @@ import { BaseEntity } from './interfaces/baseEntity';
 import { Book } from './interfaces/book';
 import { Job } from './interfaces/job';
 import { Post } from './interfaces/post';
+import { SumResult } from './types/sum-result';
 
 @Component({
   selector: 'app-root',
@@ -221,6 +222,10 @@ export class AppComponent implements OnInit {
     this.formatDate(new Date(), 0);
     this.formatDate(new Date(), 1);
     this.formatDate(new Date(), 2);
+
+    console.log(this.calculate(3, 5));
+    console.log(this.calculate(7, 9));
+    console.log(this.calculate(23, 6));
   }
 
   printInformation(candidateArr: Candidate[]) {
@@ -243,5 +248,11 @@ export class AppComponent implements OnInit {
         console.log(`Formatira datum mm-dd-yyyy: ${month}-${date}-${year}`);
         break;
     }
+  }
+
+  calculate(a: number, b: number): SumResult {
+    const sum = a + b;
+
+    return { a, b, sum };
   }
 }
