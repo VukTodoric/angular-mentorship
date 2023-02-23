@@ -1,3 +1,5 @@
-export interface BaseEntity{
-    id:number
+export interface BaseEntity {
+  id: number;
+
+  sayHello?(): void;
 }

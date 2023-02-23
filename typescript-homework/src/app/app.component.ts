@@ -157,6 +157,11 @@ export class AppComponent implements OnInit {
     console.log(this.newCustomer3);
     console.log(this.newEmployee3);
     console.log(this.obj);
+
+    console.log(this.user1.sayHello());
+    console.log(this.product1.sayHello());
+    console.log(this.customer1.sayHello());
+    console.log(this.empolyee1.sayHello());
   }
 
   printInformation(arr: Candidate[]) {

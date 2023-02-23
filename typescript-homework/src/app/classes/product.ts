@@ -8,6 +8,11 @@ export class Product implements BaseEntity {
     readonly description: string
   ) {}
 
+  sayHello() {
+    const greeting = 'Hello from Product class';
+    return greeting;
+  }
+
   getTitle() {
     return this.title;
   }
