@@ -162,21 +162,9 @@ export class AppComponent implements OnInit {
     category: 'istorija',
   };
 
-  jobInstance1: Job = {
-    id: 1,
-    title: 'Zidar',
-    description: 'Zida zgrade',
-    workHours: 45,
-    pricePerHour: 15,
-  };
+  jobInstance1: Job = new Job(1, 'Zidar', 'Zida zgrade', 45, 15);
 
-  jobInstance2: Job = {
-    id: 1,
-    title: 'Moler',
-    description: 'Kreci zidove',
-    workHours: 45,
-    pricePerHour: 11,
-  };
+  jobInstance2: Job = new Job(2, 'Moler', 'Kreci zidove', 45, 12);
   ngOnInit(): void {
     console.log('Canditate 1 is ->', this.candidate1);
     console.log('Canditate 2 is ->', this.candidate2);
@@ -225,6 +213,9 @@ export class AppComponent implements OnInit {
 
     console.log(this.jobInstance1);
     console.log(this.jobInstance2);
+
+    console.log(this.jobInstance1.getSalary());
+    console.log(this.jobInstance2.getSalary());
   }
 
   printInformation(arr: Candidate[]) {
