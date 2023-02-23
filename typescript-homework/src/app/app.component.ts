@@ -5,6 +5,7 @@ import { Employee } from './classes/employee';
 import { Product } from './classes/product';
 import { User } from './classes/user';
 import { BaseEntity } from './interfaces/baseEntity';
+import { Post } from './interfaces/post';
 
 @Component({
   selector: 'app-root',
@@ -123,6 +124,22 @@ export class AppComponent implements OnInit {
   };
   //An Interface cannot be instantiated, a class can be instantiated.
 
+  postInstance1: Post = {
+    id: 1,
+    title: 'Prva instanca',
+    description: 'Nesto nesto',
+    dateCreated: new Date(),
+    numberOfLikes: 3,
+  };
+
+  postInstance2: Post = {
+    id: 2,
+    title: 'Druga instanca',
+    description: 'Nesto nesto',
+    dateCreated: new Date(),
+    numberOfLikes: 3,
+  };
+
   ngOnInit(): void {
     console.log('Canditate 1 is ->', this.candidate1);
     console.log('Canditate 2 is ->', this.candidate2);
@@ -162,6 +179,9 @@ export class AppComponent implements OnInit {
     console.log(this.product1.sayHello());
     console.log(this.customer1.sayHello());
     console.log(this.empolyee1.sayHello());
+
+    console.log(this.postInstance1);
+    console.log(this.postInstance2);
   }
 
   printInformation(arr: Candidate[]) {
