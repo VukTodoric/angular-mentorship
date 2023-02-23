@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiResponse } from './classes/api-response';
 import { Candidate } from './classes/candidate';
 import { Customer } from './classes/customer';
 import { Employee } from './classes/employee';
@@ -165,8 +166,16 @@ export class AppComponent implements OnInit {
   };
 
   jobInstance1: Job = new Job(1, 'Zidar', 'Zida zgrade', 45, 15);
-
   jobInstance2: Job = new Job(2, 'Moler', 'Kreci zidove', 45, 12);
+
+  jobArray: Job[] = [this.jobInstance1, this.jobInstance2];
+  bookArray: Book[] = [this.bookInstance1, this.bookInstance2];
+  postArray: Post[] = [this.postInstance1, this.postInstance2];
+
+  apiResponseJob: ApiResponse<Job> = new ApiResponse(this.jobArray, 1, 2, 1);
+  apiResponseBook: ApiResponse<Book> = new ApiResponse(this.bookArray, 2, 2, 3);
+  apiResponsePost: ApiResponse<Post> = new ApiResponse(this.postArray, 6, 2, 4);
+
   ngOnInit(): void {
     console.log('Canditate 1 is ->', this.candidate1);
     console.log('Canditate 2 is ->', this.candidate2);
@@ -226,6 +235,10 @@ export class AppComponent implements OnInit {
     console.log(this.calculate(3, 5));
     console.log(this.calculate(7, 9));
     console.log(this.calculate(23, 6));
+
+    console.log(this.apiResponseJob);
+    console.log(this.apiResponseBook);
+    console.log(this.apiResponsePost);
   }
 
   printInformation(candidateArr: Candidate[]) {
