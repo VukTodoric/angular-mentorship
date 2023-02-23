@@ -1,7 +1,6 @@
-export interface Book {
-  id: number;
-  title: string;
-  description: string;
+import { Post } from './post';
+
+export interface Book extends Post {
   dateCreated: Date;
   author: string;
   numberOfStars: string;

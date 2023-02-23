@@ -1,7 +1,6 @@
-export interface Job {
-  id: number;
-  title: string;
-  description: string;
+import { Post } from './post';
+
+export interface Job extends Post {
   workHours: number;
   pricePerHour: number;
 }
