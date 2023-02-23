@@ -2,6 +2,10 @@ export class Candidate {
   constructor(
     private firstName: string,
     private lastName: string,
-    private birthday: Date
+    public birthday: Date | number
   ) {}
+
+  getFullName() {
+    return `${this.firstName}  ${this.lastName}`;
+  }
 }

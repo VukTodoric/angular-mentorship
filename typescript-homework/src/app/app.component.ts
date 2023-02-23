@@ -20,12 +20,12 @@ export class AppComponent implements OnInit {
   candidate1: Candidate = new Candidate(
     'Petar',
     'Petrovic',
-    new Date('1991-01-01')
+    new Date('1991-01-01').getFullYear()
   );
   candidate2: Candidate = new Candidate(
     'Marko',
     'Markovic',
-    new Date('1992-02-02')
+    new Date('1992-02-02').getFullYear()
   );
 
   candidatesArray: Candidate[] = [this.candidate1, this.candidate2];
@@ -218,7 +218,7 @@ export class AppComponent implements OnInit {
     console.log(this.jobInstance2.getSalary());
   }
 
-  printInformation(arr: Candidate[]) {
-    return arr;
+  printInformation(candidateArr: Candidate[]) {
+    return candidateArr.map((res) => `${res.getFullName()} : ${res.birthday}`);
   }
 }
