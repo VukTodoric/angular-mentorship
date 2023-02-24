@@ -1,5 +1,5 @@
-import { Address } from './address';
-import { User } from './user';
+import { Address } from './address.model';
+import { User } from './user.model';
 
 export class Customer {
   constructor(public customer: User, public address: Address) {}

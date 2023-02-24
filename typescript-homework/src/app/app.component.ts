@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Address } from './classes/address';
-import { ApiResponse } from './classes/api-response';
-import { Candidate } from './classes/candidate';
-import { Customer } from './classes/customer';
-import { Employee } from './classes/employee';
-import { Product } from './classes/product';
-import { User } from './classes/user';
-import { DateFormats } from './enums/date-formats';
-import { BaseEntity } from './interfaces/base-entity.model';
-import { Book } from './interfaces/book';
-import { Job } from './interfaces/job';
-import { Post } from './interfaces/post';
-import { SumResult } from './types/sum-result';
+import { Address } from './models/address.model';
+import { ApiResponse } from './models/api-response.model';
+import { Candidate } from './models/candidate.model';
+import { Customer } from './models/customer.model';
+import { Employee } from './models/employee.model';
+import { Product } from './models/product.model';
+import { User } from './models/user.model';
+import { DateFormats } from './models/enums/date-formats';
+import { BaseEntity } from './models/interfaces/base-entity.interface';
+import { Book } from './models/interfaces/book.interface';
+import { Job } from './models/interfaces/job.interface';
+import { Post } from './models/interfaces/post.interface';
+import { SumResult } from './models/types/sum-result';
 
 @Component({
   selector: 'app-root',

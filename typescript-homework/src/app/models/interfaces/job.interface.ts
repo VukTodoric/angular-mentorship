@@ -1,4 +1,4 @@
-import { Post } from './post';
+import { Post } from './post.interface';
 export class Job implements Post {
   constructor(
     public id: number,

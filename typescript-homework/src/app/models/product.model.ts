@@ -1,4 +1,4 @@
-import { BaseEntity } from '../interfaces/base-entity.model';
+import { BaseEntity } from './interfaces/base-entity.interface';
 
 export class Product implements BaseEntity {
   constructor(

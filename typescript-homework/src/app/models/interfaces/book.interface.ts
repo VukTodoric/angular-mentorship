@@ -1,4 +1,4 @@
-import { Post } from './post';
+import { Post } from './post.interface';
 
 export interface Book extends Post {
   dateCreated: Date;
