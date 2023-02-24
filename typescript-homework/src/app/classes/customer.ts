@@ -1,22 +1,16 @@
 import { Address } from './address';
 import { User } from './user';
 
-export class Customer extends User {
-  constructor(
-    id: number,
-    name: string,
-    email: string,
-    phone: number,
-    public address: Address
-  ) {
-    super(id, name, email, phone);
-  }
+export class Customer {
+  constructor(public customer: User, public address: Address) {}
 
   customerInformation() {
-    return `My name is ${this.name}. You can contact me via email ${this.email} or phone ${this.phone}.`;
+    return `My name is ${this.getName()}. You can contact me via email ${
+      this.customer.email
+    } or phone ${this.customer.phone}.`;
   }
 
   getName() {
-    return this.name;
+    return this.customer.name;
   }
 }

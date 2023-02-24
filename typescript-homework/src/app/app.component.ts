@@ -35,26 +35,17 @@ export class AppComponent implements OnInit {
   candidatesArray: Candidate[] = [this.candidate1, this.candidate2];
 
   empolyee1: Employee = new Employee(
-    1,
-    'Marija',
-    'marija@nesto.com',
-    54545464,
+    new User(1, 'Predrag', 'predrag@nesto.com', 5656),
     'menadzer'
   );
 
   empolyee2: Employee = new Employee(
-    1,
-    'Janko',
-    'janko@nesto.com',
-    242424,
+    new User(2, 'Danica', 'danica@nesto.com', 5656),
     'menadzer'
   );
 
   customer1: Customer = new Customer(
-    1,
-    'Branko',
-    'branko@nesto.com',
-    251454,
+    new User(1, 'Branko', 'branko@nesto.com', 454545),
     new Address('Srpskih vladar', 12, 'Beograd', 'Serbia')
   );
 
@@ -62,32 +53,20 @@ export class AppComponent implements OnInit {
   user2: User = new User(2, 'Zika', 'zika@nesto.com', 54654);
 
   newCustomer1: Customer = new Customer(
-    1,
-    'Janko',
-    'janko@nesto.com',
-    54564,
+    new User(2, 'Dragan', 'dragan@nesto.com', 454545),
     new Address('Nemanjina', 12, 'Kraljevo', 'Serbia')
   );
   newCustomer2: Customer = new Customer(
-    2,
-    'Zivko',
-    'Zivko@nesto.com',
-    54564,
+    new User(1, 'Milovan', 'milovan@nesto.com', 454545),
     new Address('Dubrovacka', 12, 'Novi sad', 'Serbia')
   );
 
   newEmployee1: Employee = new Employee(
-    1,
-    'Marica',
-    'marica@nesto.com',
-    656565,
+    new User(1, 'Ivan', 'ivan@nesto.com', 5656),
     'direktor'
   );
   newEmployee2: Employee = new Employee(
-    2,
-    'Dragica',
-    'dragica@nesto.com',
-    656565,
+    new User(2, 'Marija', 'marija@nesto.com', 5656),
     'direktor'
   );
 
@@ -100,17 +79,11 @@ export class AppComponent implements OnInit {
   newProduct1: Product = new Product(1, 'Kinder jaje', 100, 'slatkis');
   newUser1: User = new User(1, 'Novica', 'novica@nesto.com', 6645);
   newCustomer3: Customer = new Customer(
-    1,
-    'Blagoje',
-    'blagoje@nesto.com',
-    54545,
+    new User(3, 'Ana', 'ana@nesto.com', 454545),
     new Address('Nemanjina', 12, 'Kraljevo', 'Serbia')
   );
   newEmployee3: Employee = new Employee(
-    1,
-    'Rade',
-    'rade@nesto.com',
-    54544,
+    new User(3, 'Rade', 'rade@nesto.com', 5656),
     'HR'
   );
   obj: BaseEntity = {
@@ -202,8 +175,8 @@ export class AppComponent implements OnInit {
 
     console.log(this.user1.sayHello());
     console.log(this.product1.sayHello());
-    console.log(this.customer1.sayHello());
-    console.log(this.empolyee1.sayHello());
+    console.log(this.customer1.customer.sayHello());
+    console.log(this.empolyee1.employee.sayHello());
 
     console.log(this.postInstance1);
     console.log(this.postInstance2);
