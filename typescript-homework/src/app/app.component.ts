@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Address } from './classes/address';
 import { ApiResponse } from './classes/api-response';
 import { Candidate } from './classes/candidate';
 import { Customer } from './classes/customer';
@@ -54,10 +55,7 @@ export class AppComponent implements OnInit {
     'Branko',
     'branko@nesto.com',
     251454,
-    'Nemanjina',
-    13,
-    'Beograd',
-    'Serbia'
+    new Address('Srpskih vladar', 12, 'Beograd', 'Serbia')
   );
 
   user1: User = new User(1, 'Pera', 'pera@nesto.com', 54654);
@@ -68,20 +66,14 @@ export class AppComponent implements OnInit {
     'Janko',
     'janko@nesto.com',
     54564,
-    'Hajdukova',
-    12,
-    'Kraljevo',
-    'Serbia'
+    new Address('Nemanjina', 12, 'Kraljevo', 'Serbia')
   );
   newCustomer2: Customer = new Customer(
     2,
     'Zivko',
     'Zivko@nesto.com',
     54564,
-    'Hajdukova',
-    12,
-    'Kraljevo',
-    'Serbia'
+    new Address('Dubrovacka', 12, 'Novi sad', 'Serbia')
   );
 
   newEmployee1: Employee = new Employee(
@@ -112,10 +104,7 @@ export class AppComponent implements OnInit {
     'Blagoje',
     'blagoje@nesto.com',
     54545,
-    'Dubrovacka',
-    123,
-    'Uzice',
-    'Serbia'
+    new Address('Nemanjina', 12, 'Kraljevo', 'Serbia')
   );
   newEmployee3: Employee = new Employee(
     1,
