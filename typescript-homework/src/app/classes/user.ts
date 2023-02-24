@@ -1,4 +1,4 @@
-import { BaseEntity } from '../interfaces/baseEntity';
+import { BaseEntity } from '../interfaces/base-entity.model';
 export class User implements BaseEntity {
   constructor(
     public id: number,

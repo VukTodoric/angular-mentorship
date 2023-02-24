@@ -7,7 +7,7 @@ import { Employee } from './classes/employee';
 import { Product } from './classes/product';
 import { User } from './classes/user';
 import { DateFormats } from './enums/date-formats';
-import { BaseEntity } from './interfaces/baseEntity';
+import { BaseEntity } from './interfaces/base-entity.model';
 import { Book } from './interfaces/book';
 import { Job } from './interfaces/job';
 import { Post } from './interfaces/post';
@@ -88,6 +88,9 @@ export class AppComponent implements OnInit {
   );
   obj: BaseEntity = {
     id: 1,
+    sayHello() {
+      return 'Hello all';
+    },
   };
   //An Interface cannot be instantiated, a class can be instantiated.
 
