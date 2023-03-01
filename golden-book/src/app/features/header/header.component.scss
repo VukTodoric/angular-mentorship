@@ -1,0 +1,27 @@
+header {
+  height: 5vh;
+  background: linear-gradient(
+    0deg,
+    rgba(39, 39, 39, 0.5802696078431373) 30%,
+    rgba(0, 0, 0, 1) 85%
+  );
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: 0 2.5%;
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      max-width: 100%;
+
+      .logo {
+        letter-spacing: 4px;
+        margin-left: 1rem;
+      }
+    }
+  }
+}

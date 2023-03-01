@@ -1,0 +1,22 @@
+<div class="home-page-wrapper">
+  <h2>{{ pageTitle }}</h2>
+  <div class="search-filter-wrapper">
+    <app-search [placeholder]="searchPlaceholder"></app-search>
+    <app-dropdown
+      [placeholder]="filterPlaceholder"
+      (onDropdownAction)="populateDropdown()"
+      [selectField]="categoryOption"
+    ></app-dropdown>
+  </div>
+  <div class="book-display-wrapper">
+    <app-tile
+      *ngFor="let item of booksArray"
+      title="{{ item.title }}"
+      imageSrc="{{ item.imageSrc }}"
+      fullname="{{ item.fullName }}"
+      [year]="item.year"
+      category="{{ item.category }}"
+      description="{{ item.description }}"
+    ></app-tile>
+  </div>
+</div>

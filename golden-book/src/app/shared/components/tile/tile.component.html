@@ -1,0 +1,19 @@
+<article>
+  <h3>{{ title }}</h3>
+  <div class="content-wrapper">
+    <div class="image-wrapper">
+      <img src="{{ imageSrc }}" alt="{{ title }}" />
+    </div>
+    <div class="book-overwiew-wrapper">
+      <h5>{{ fullname }} {{ year }}</h5>
+      <h5>{{ category }}</h5>
+      <p>
+        {{ description }}
+      </p>
+      <app-button
+        [label]="buttonLabel"
+        (onClick)="onBookOverview($event)"
+      ></app-button>
+    </div>
+  </div>
+</article>

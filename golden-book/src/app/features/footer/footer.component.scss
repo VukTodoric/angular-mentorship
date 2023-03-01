@@ -1,0 +1,11 @@
+footer {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    rgba(39, 39, 39, 0.5802696078431373) 30%,
+    rgba(0, 0, 0, 1) 85%
+  );
+}

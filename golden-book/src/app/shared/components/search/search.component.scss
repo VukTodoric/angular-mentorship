@@ -1,0 +1,20 @@
+.search-wrapper {
+  position: relative;
+
+  input {
+    min-width: 30rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    background-color: ivory;
+    padding-left: 0.5rem;
+    padding-right: 2rem;
+  }
+
+  ::ng-deep button {
+    position: absolute;
+    right: 0;
+    height: 2rem;
+    background-color: ivory;
+    border-radius: 0.25rem;
+  }
+}
