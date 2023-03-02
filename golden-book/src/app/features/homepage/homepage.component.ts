@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from 'src/app/models/enums/category.model';
-import { Author } from 'src/app/models/author.model';
-import { BookDetails } from 'src/app/models/interfaces/book.model';
-import { User } from 'src/app/models/interfaces/user.model';
+import { Category } from 'src/app/models/category.enum';
+import { BookDetails } from 'src/app/models/book.model';
 
 @Component({
   selector: 'app-homepage',
@@ -14,27 +12,10 @@ export class HomepageComponent implements OnInit {
   searchPlaceholder: string = 'Search by Book Name';
   filterPlaceholder: string = 'Filter by Category';
 
-  user1: User = {
-    id: 1,
-    name: 'Oskar',
-    lastName: 'Vajld',
-  };
-
-  user2: User = {
-    id: 2,
-    name: 'Dzordz',
-    lastName: 'Orvel',
-  };
-
-  user3: User = {
-    id: 3,
-    name: 'Samjuel',
-    lastName: 'Hantington',
-  };
-
   book1: BookDetails = {
     title: 'Dorijan Grej',
-    fullName: new Author(this.user1).getFullName(),
+    firstName: 'Oskar',
+    lastName: 'Vajld',
     year: 1890,
     category: Category.Drama,
     description:
@@ -44,7 +25,8 @@ export class HomepageComponent implements OnInit {
 
   book2: BookDetails = {
     title: '1984',
-    fullName: new Author(this.user2).getFullName(),
+    firstName: 'Dzordz',
+    lastName: 'Orvel',
     year: 1890,
     category: Category.Fantasy,
     description:
@@ -54,7 +36,8 @@ export class HomepageComponent implements OnInit {
 
   book3: BookDetails = {
     title: 'Rat civilizacija',
-    fullName: new Author(this.user3).getFullName(),
+    firstName: 'Frensis',
+    lastName: 'Fukujama',
     year: 1890,
     category: Category.Historic,
     description:
@@ -63,7 +46,7 @@ export class HomepageComponent implements OnInit {
   };
 
   booksArray: BookDetails[] = [this.book1, this.book2, this.book3];
-  categoryOption?: any;
+  categoryOption?: string;
 
   constructor() {}
 

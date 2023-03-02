@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BookDetails } from 'src/app/models/book.model';
 
 @Component({
   selector: 'app-tile',
@@ -7,18 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TileComponent implements OnInit {
   buttonLabel: string = 'Book overview';
-  @Input() title?: string;
-  @Input() fullname?: string;
-  @Input() year?: number;
-  @Input() category?: string;
-  @Input() description?: string;
-  @Input() imageSrc?: string;
+
+  @Input() book?: BookDetails;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onBookOverview(event: Event) {
-    console.log(event);
+  onBookOverview() {
+    console.log('book overview');
   }
 }

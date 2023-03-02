@@ -9,14 +9,6 @@
     ></app-dropdown>
   </div>
   <div class="book-display-wrapper">
-    <app-tile
-      *ngFor="let item of booksArray"
-      title="{{ item.title }}"
-      imageSrc="{{ item.imageSrc }}"
-      fullname="{{ item.fullName }}"
-      [year]="item.year"
-      category="{{ item.category }}"
-      description="{{ item.description }}"
-    ></app-tile>
+    <app-tile *ngFor="let item of booksArray" [book]="item"></app-tile>
   </div>
 </div>

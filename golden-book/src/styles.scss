@@ -51,6 +51,9 @@ body {
 
   main {
     padding: 2.5% 0;
+    height: 100%;
+    overflow: auto;
+    background: url("./assets/images/golden-book.png") no-repeat black 5% 50%;
   }
 }
 

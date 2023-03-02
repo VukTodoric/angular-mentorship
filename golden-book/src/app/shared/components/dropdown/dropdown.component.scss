@@ -1,9 +1,15 @@
 .dropdown-wrapper {
   select {
-    width: 30rem;
+    width: 15rem;
     height: 2rem;
     background-color: ivory;
     border-radius: 0.25rem;
     padding-left: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  select {
+    width: 30rem !important;
   }
 }

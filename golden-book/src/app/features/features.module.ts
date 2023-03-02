@@ -8,4 +8,4 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [CommonModule, SharedModule],
   exports: [HomepageComponent],
 })
-export class MainGridModule {}
+export class FeaturesModule {}

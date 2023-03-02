@@ -1,13 +1,16 @@
 .home-page-wrapper {
   .search-filter-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 2.5rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .book-display-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 1rem;
   }
 }

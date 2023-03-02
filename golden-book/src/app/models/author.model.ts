@@ -1,4 +1,4 @@
-import { User } from './interfaces/user.model';
+import { User } from './user.model';
 
 export class Author {
   constructor(public fullname: User) {}

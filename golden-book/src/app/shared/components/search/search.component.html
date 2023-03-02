@@ -1,6 +1,6 @@
 <div class="search-wrapper">
-  <input type="text" placeholder="{{ placeholder }}" id="searchId"/>
-  <app-button (onClick)="onSearcAction()">
+  <input type="text" placeholder="{{ placeholder }}" #searchRef />
+  <app-button (onClick)="onSearchAction(searchRef)">
     <span class="material-symbols-outlined"> search </span>
   </app-button>
 </div>
