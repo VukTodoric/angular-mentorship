@@ -13,6 +13,8 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {}
 
   onSearcAction() {
-    return (document.getElementById('searchId') as HTMLInputElement).value; //TODO: Need to ask question
+    console.log(
+      (document.getElementById('searchId') as HTMLInputElement).value
+    );
   }
 }
