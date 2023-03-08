@@ -4,11 +4,18 @@
     <app-search [placeholder]="searchPlaceholder"></app-search>
     <app-dropdown
       [placeholder]="filterPlaceholder"
-      (onDropdownAction)="populateDropdown()"
-      [selectField]="categoryOption"
+      [selectField]="categoryArray"
     ></app-dropdown>
   </div>
-  <div class="book-display-wrapper">
-    <app-tile *ngFor="let item of booksArray" [book]="item"></app-tile>
-  </div>
+  <mat-grid-list
+    [cols]="breakpoint"
+    [rowHeight]="heightOfRow"
+    gutterSize="1rem"
+    (window:resize)="onResize($event)"
+  >
+    <mat-grid-tile *ngFor="let book of booksArray">
+      <app-card [book]="book"></app-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <app-pagination></app-pagination>
 </div>

@@ -1,6 +1,18 @@
 .search-wrapper {
   position: relative;
 
+  ::ng-deep .mat-form-field-infix {
+    width: 100%;
+  }
+
+  ::ng-deep .mat-input-underline {
+    background-color: white !important;
+  }
+
+  mat-label {
+    color: darkgray;
+  }
+
   input {
     width: 15rem;
     height: 2rem;
@@ -8,12 +20,14 @@
     background-color: ivory;
     padding-left: 0.5rem;
     padding-right: 2rem;
+    color: black;
+    outline: none;
   }
 
   ::ng-deep button {
     position: absolute;
     right: 0;
-    height: 2rem;
+    height: 1.9rem;
     background-color: ivory;
     border-radius: 0.25rem;
   }

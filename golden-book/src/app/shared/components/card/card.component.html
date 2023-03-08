@@ -1,0 +1,18 @@
+<mat-card role="article">
+  <h5>{{ book?.title }}</h5>
+  <div class="content-wrapper">
+    <img mat-card-lg-image [src]="book?.imageSrc" [alt]="book?.title" />
+    <div class="book-overwiew-wrapper">
+      <mat-card-content>
+        <h5>{{ book?.firstName }} {{ book?.lastName }} :{{ book?.year }}</h5>
+        <h5>Category: {{ book?.category }}</h5>
+        <p>{{ book?.description }}</p>
+      </mat-card-content>
+
+      <app-button
+        [label]="buttonLabel"
+        (onClick)="onBookOverview()"
+      ></app-button>
+    </div>
+  </div>
+</mat-card>

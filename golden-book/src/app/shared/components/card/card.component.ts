@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { BookDetails } from 'src/app/models/book.model';
 
 @Component({
-  selector: 'app-tile',
-  templateUrl: './tile.component.html',
-  styleUrls: ['./tile.component.scss'],
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss'],
 })
-export class TileComponent implements OnInit {
+export class CardComponent implements OnInit {
   buttonLabel: string = 'Book overview';
 
   @Input() book?: BookDetails;

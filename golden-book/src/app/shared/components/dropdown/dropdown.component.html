@@ -1,10 +1,13 @@
-<div class="dropdown-wrapper">
-  <select name="filter" id="filterId" (click)="dropdownAction()">
-    <option value="0">
-      {{ placeholder }}
-    </option>
-    <option value="{{ selectField }}">
-      {{ selectField }}
-    </option>
-  </select>
-</div>
+<mat-form-field class="dropdown-wrapper">
+  <mat-label>{{ placeholder }}</mat-label>
+  <mat-select #option multiple>
+    <mat-option *ngFor="let item of selectField" [value]="item">{{
+      item
+    }}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-chip-list>
+  <mat-chip *ngFor="let chip of option.value" [value]="chip">{{
+    chip
+  }}</mat-chip>
+</mat-chip-list>

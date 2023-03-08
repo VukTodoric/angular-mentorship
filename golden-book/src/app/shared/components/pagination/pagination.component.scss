@@ -1,0 +1,15 @@
+.mat-paginator {
+  background-color: black;
+  color: ivory;
+
+  ::ng-deep .mat-select-value {
+    color: ivory;
+  }
+  ::ng-deep .mat-select-arrow {
+    color: ivory;
+  }
+}
+// Za diskusiju
+// .mat-select-panel {
+//   min-width: 2rem !important;
+// }

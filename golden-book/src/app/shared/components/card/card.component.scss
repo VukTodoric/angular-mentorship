@@ -1,32 +1,14 @@
-article {
+:host ::ng-deep mat-card {
   background-color: ivory;
-  color: black;
-  max-width: 25rem;
-  height: 100%;
   border-radius: 0.3rem;
-  padding: 1rem;
+  color: black;
 
   .content-wrapper {
     display: flex;
     margin-top: 0.5rem;
 
-    .image-wrapper {
-      margin-right: 0.5rem;
-
-      img {
-        width: 100%;
-        height: calc(16rem - 1rem);
-      }
-    }
-
     .book-overwiew-wrapper {
       margin-left: 0.5rem;
-      width: 50%;
-
-      h5,
-      p {
-        margin: 0.5rem 0;
-      }
 
       ::ng-deep button {
         background-color: darkgray;
