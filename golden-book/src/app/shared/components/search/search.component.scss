@@ -1,40 +1,36 @@
-.search-wrapper {
+@import "../../../../assets/styles/variables.scss";
+
+:host {
+  width: 50%;
   position: relative;
 
-  ::ng-deep .mat-form-field-infix {
+  .search-wrapper::ng-deep {
     width: 100%;
-  }
 
-  ::ng-deep .mat-input-underline {
-    background-color: white !important;
-  }
+    .mat-form-field-label {
+      padding: 0 0.5rem;
+      color: $gb-secondary;
+      font-size: 1rem;
+      text-shadow: 1px 1px $gb-primary;
+    }
 
-  mat-label {
-    color: darkgray;
-  }
+    input {
+      height: 2rem;
+      margin: 0;
+      border-radius: 0.25rem;
+      background-color: $gb-primary;
+      padding-left: 0.5rem;
+      padding-right: 1rem;
+      color: $gb-secondary;
+      outline: none;
+    }
 
-  input {
-    width: 15rem;
-    height: 2rem;
-    border-radius: 0.25rem;
-    background-color: ivory;
-    padding-left: 0.5rem;
-    padding-right: 2rem;
-    color: black;
-    outline: none;
-  }
-
-  ::ng-deep button {
-    position: absolute;
-    right: 0;
-    height: 1.9rem;
-    background-color: ivory;
-    border-radius: 0.25rem;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  input {
-    width: 30rem !important;
+    .searchBtn button {
+      position: absolute;
+      right: -1.5rem;
+      bottom: 0.45rem;
+      background-color: $gb-primary;
+      border-radius: 0.25rem;
+    }
   }
 }

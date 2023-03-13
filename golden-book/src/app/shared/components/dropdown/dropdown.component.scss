@@ -1,49 +1,46 @@
-::ng-deep .dropdown-wrapper {
-  min-width: 18rem;
+@import "../../../../assets/styles/variables.scss";
 
-  ::ng-deep .mat-form-field-infix {
+:host {
+  width: 50%;
+
+  .dropdown-wrapper::ng-deep {
     width: 100%;
+
+    .mat-select {
+      background-color: $gb-primary;
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+      height: 2rem;
+    }
+
+    .mat-form-field-label {
+      padding: 0 0.5rem;
+      color: $gb-secondary;
+      font-size: 1rem;
+      text-shadow: 1px 1px $gb-primary;
+    }
   }
 
-  ::ng-deep .mat-select {
-    background-color: ivory;
-    border-radius: 0.25rem;
-    padding: 0.5rem;
-  }
-
-  mat-label {
-    color: darkgray;
+  .mat-chip.mat-standard-chip {
+    background-color: $gb-primary;
+    color: $gb-secondary;
+    min-height: 1.5rem;
   }
 }
 
-::ng-deep .mat-select-panel {
-  background-color: ivory !important;
-  min-width: 18rem !important;
+::ng-deep .dropdownPanel {
+  background-color: $gb-primary;
+  min-width: calc(100% + 16px) !important;
   position: absolute;
-  left: 2rem;
   top: 2.5rem;
+  left: 2rem;
 
   .mat-pseudo-checkbox-checked {
-    background-color: grey;
+    background-color: $gb-secondary;
   }
 
   .mat-option-text {
-    color: gray;
+    color: $gb-secondary;
     font-weight: 500;
-  }
-}
-
-.mat-chip.mat-standard-chip {
-  background-color: ivory;
-  color: gray;
-}
-
-@media only screen and (min-width: 600px) {
-  ::ng-deep .dropdown-wrapper {
-    width: 32rem;
-  }
-
-  ::ng-deep .mat-select-panel {
-    min-width: 32rem !important;
   }
 }

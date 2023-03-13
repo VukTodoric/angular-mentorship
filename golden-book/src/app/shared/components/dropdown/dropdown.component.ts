@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DropdownComponent implements OnInit {
   @Input() placeholder?: string;
-  @Input() selectField?: any;
+  @Input() selectField?: string[];
 
   constructor() {}
 

@@ -35,6 +35,7 @@ $golden-book-theme: mat.define-light-theme(
 @include mat.all-component-themes($golden-book-theme);
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import "./assets/styles/variables.scss";
 
 * {
   margin: 0;
@@ -44,8 +45,8 @@ $golden-book-theme: mat.define-light-theme(
 
   body {
     background-color: black;
-    color: ivory;
-    font-size: 14px;
+    color: $gb-primary;
+    font-size: 12px;
 
     h1 {
       font-size: 24px;
@@ -59,13 +60,16 @@ $golden-book-theme: mat.define-light-theme(
     h5 {
       font-size: 15px;
     }
+    h6 {
+      font-size: 13px;
+    }
 
     ul {
       list-style: none;
     }
 
     a {
-      color: ivory;
+      color: $gb-primary;
       text-decoration: none;
     }
 
@@ -89,6 +93,16 @@ $golden-book-theme: mat.define-light-theme(
       height: 100%;
       overflow: auto;
       background: url("./assets/images/golden-book.png") no-repeat black 5% 50%;
+    }
+
+    .primary-layout {
+      background-color: $gb-primary;
+      color: $gb-secondary;
+    }
+
+    .secondary-layout {
+      background-color: $gb-secondary;
+      color: $gb-primary;
     }
   }
 

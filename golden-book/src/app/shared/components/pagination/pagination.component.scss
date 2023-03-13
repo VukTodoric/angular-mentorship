@@ -1,15 +1,17 @@
-.mat-paginator {
-  background-color: black;
-  color: ivory;
+@import "../../../../assets/styles/variables.scss";
 
-  ::ng-deep .mat-select-value {
-    color: ivory;
-  }
-  ::ng-deep .mat-select-arrow {
-    color: ivory;
+:host {
+  .book-paginator::ng-deep {
+    background-color: transparent;
+    color: $gb-primary;
+
+    .mat-select-value,
+    .mat-select-arrow {
+      color: $gb-primary;
+    }
+
+    .mat-button-disabled {
+      color: $gb-secondary;
+    }
   }
 }
-// Za diskusiju
-// .mat-select-panel {
-//   min-width: 2rem !important;
-// }

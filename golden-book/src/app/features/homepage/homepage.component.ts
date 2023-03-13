@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from 'src/app/models/category.enum';
-import { BookDetails } from 'src/app/models/book.model';
+import { Category } from '../models/category.enum';
+import { BookDetails } from '../models/book.model';
 
 @Component({
   selector: 'app-homepage',
@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
     year: 1890,
     category: Category.Drama,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, of type and scrambled it to make a type specimen book.",
+      'Lorem Ipsum is simply dummy text of the printing and typesetting indust of type and scrambled it to make a type specimen book.',
     imageSrc: '../../../../assets/images/dorijan-grej.jfif',
   };
 
@@ -30,7 +30,7 @@ export class HomepageComponent implements OnInit {
     year: 1890,
     category: Category.Fantasy,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
+      'Lorem Ipsum is simply dummy textstandard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.',
     imageSrc: '../../../../assets/images/1984.jfif',
   };
 
@@ -41,7 +41,7 @@ export class HomepageComponent implements OnInit {
     year: 1890,
     category: Category.Historic,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
     imageSrc: '../../../../assets/images/the-lost-trip.jpg',
   };
 
@@ -52,7 +52,7 @@ export class HomepageComponent implements OnInit {
     year: 1890,
     category: Category.Drama,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem specimen book.',
     imageSrc: '../../../../assets/images/find-me.jpg',
   };
 
@@ -63,7 +63,7 @@ export class HomepageComponent implements OnInit {
     year: 1890,
     category: Category.Fantasy,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
     imageSrc: '../../../../assets/images/darkjpg.jpg',
   };
 
@@ -74,7 +74,7 @@ export class HomepageComponent implements OnInit {
     year: 1890,
     category: Category.Historic,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ever since the 1500s,  of type and scrambled it to make a type specimen book.',
     imageSrc: '../../../../assets/images/money-power.jpg',
   };
 
@@ -95,18 +95,8 @@ export class HomepageComponent implements OnInit {
     Category.ScienceFiction,
     Category.Thriller,
   ];
-  breakpoint?: number;
-  heightOfRow: string | number = '500px';
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.heightOfRow = '350px';
-    this.breakpoint = window.innerWidth <= 400 ? 1 : 3;
-  }
-
-  onResize(event: any) {
-    this.heightOfRow = '350px';
-    this.breakpoint = event.target.innerWidth >= 1000 ? 3 : 1;
-  }
+  ngOnInit(): void {}
 }

@@ -1,6 +1,6 @@
 <mat-form-field class="dropdown-wrapper">
   <mat-label>{{ placeholder }}</mat-label>
-  <mat-select #option multiple>
+  <mat-select #option multiple panelClass="dropdownPanel">
     <mat-option *ngFor="let item of selectField" [value]="item">{{
       item
     }}</mat-option>
