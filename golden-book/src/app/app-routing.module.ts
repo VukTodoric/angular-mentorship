@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BookComponent } from './features/book/book.component';
+import { BookDetailsComponent } from './features/books/book-details/book.component';
 import { HomepageComponent } from './features/homepage/homepage.component';
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'book/:bookId',
-    component: BookComponent,
+    component: BookDetailsComponent,
   },
   {
     path: '**',

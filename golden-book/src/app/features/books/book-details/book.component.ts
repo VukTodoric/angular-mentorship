@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { BookDetails } from '../models/book.model';
-import { Category } from '../models/category.enum';
+import { BookDetails } from '../../models/book.model';
+import { Category } from '../../models/category.enum';
 
 @Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss'],
+  selector: 'app-book-details',
+  templateUrl: './book-details.component.html',
+  styleUrls: ['./book-details.component.scss'],
 })
-export class BookComponent implements OnInit {
+export class BookDetailsComponent implements OnInit {
   pageTitle: string = 'Book Overview';
 
   constructor() {}
