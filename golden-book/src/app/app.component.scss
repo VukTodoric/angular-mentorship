@@ -1,0 +1,18 @@
+@import "./../assets/styles/variables.scss";
+
+:host {
+  .menu-btn ::ng-deep button {
+    background-color: transparent;
+    color: $gb-primary;
+  }
+
+  .drawer-container {
+    background-color: transparent;
+
+    .side-drawer {
+      background-color: transparent;
+      border-right: 1px solid $gb-primary;
+      width: 22%;
+    }
+  }
+}

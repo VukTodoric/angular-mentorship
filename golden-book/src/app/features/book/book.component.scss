@@ -1,0 +1,31 @@
+@import "../../../assets/styles/variables.scss";
+
+.book-wrapper {
+  height: 100%;
+  margin: 2.5% 0;
+
+  h2 {
+    color: $gb-primary;
+  }
+
+  .book-card-wrapper {
+    ::ng-deep .golden-card {
+      width: 100%;
+
+      h5 {
+        font-size: 1.1rem;
+      }
+
+      .content-wrapper {
+        h6 {
+          font-size: 0.9rem;
+        }
+
+        .img-wrapper {
+          width: 50%;
+          min-height: 30rem;
+        }
+      }
+    }
+  }
+}

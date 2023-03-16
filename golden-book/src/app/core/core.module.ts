@@ -4,10 +4,19 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SharedModule } from '../shared/shared.module';
 import { FeaturesModule } from '../features/features.module';
+import { MaterialModule } from '../shared/material/material.module';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
-  declarations: [FooterComponent, HeaderComponent],
-  imports: [CommonModule, SharedModule, FeaturesModule],
-  exports: [FooterComponent, HeaderComponent],
+  declarations: [FooterComponent, HeaderComponent, SideBarComponent],
+  imports: [
+    CommonModule,
+    SharedModule,
+    FeaturesModule,
+    MaterialModule,
+    AppRoutingModule,
+  ],
+  exports: [FooterComponent, HeaderComponent, SideBarComponent],
 })
 export class CoreModule {}

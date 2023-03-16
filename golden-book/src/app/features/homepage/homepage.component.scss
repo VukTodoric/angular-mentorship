@@ -1,6 +1,12 @@
+@import "../../../assets/styles/variables.scss";
+
 .home-page-wrapper {
   height: 100%;
   margin: 2.5% 0;
+
+  h2 {
+    color: $gb-primary;
+  }
 
   .search-filter-wrapper {
     display: flex;

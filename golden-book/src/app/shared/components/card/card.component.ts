@@ -10,12 +10,13 @@ export class CardComponent implements OnInit {
   buttonLabel: string = 'Book overview';
 
   @Input() book?: BookDetails;
+  @Input() fullVisibility: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onBookOverview() {
-    console.log('book overview');
+  onBookOverview(value: BookDetails | undefined) {
+    console.log(value);
   }
 }

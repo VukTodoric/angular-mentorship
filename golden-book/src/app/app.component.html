@@ -1,7 +1,16 @@
-<app-header></app-header>
+<app-header>
+  <app-button class="menu-btn" (onClick)="drawer.toggle()">
+    <span class="material-symbols-outlined"> menu </span>
+  </app-button>
+</app-header>
 <main>
+  <mat-drawer-container autosize class="drawer-container">
+    <mat-drawer #drawer mode="side" class="side-drawer">
+      <app-side-bar></app-side-bar>
+    </mat-drawer>
     <div class="container">
-      <app-homepage></app-homepage>
+      <router-outlet></router-outlet>
     </div>
-  </main>  
+  </mat-drawer-container>
+</main>
 <app-footer></app-footer>

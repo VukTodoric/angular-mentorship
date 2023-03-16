@@ -13,9 +13,12 @@ export class HomepageComponent implements OnInit {
   filterPlaceholder: string = 'Filter by Category';
 
   book1: BookDetails = {
+    id: 1,
     title: 'Dorijan Grej',
     firstName: 'Oskar',
     lastName: 'Vajld',
+    country: 'Irska',
+    isbn: 12456,
     year: 1890,
     category: Category.Drama,
     description:
@@ -24,9 +27,12 @@ export class HomepageComponent implements OnInit {
   };
 
   book2: BookDetails = {
+    id: 2,
     title: '1984',
     firstName: 'Dzordz',
     lastName: 'Orvel',
+    country: 'Velika Britanija',
+    isbn: 12442456,
     year: 1890,
     category: Category.Fantasy,
     description:
@@ -35,9 +41,12 @@ export class HomepageComponent implements OnInit {
   };
 
   book3: BookDetails = {
+    id: 3,
     title: 'Rat civilizacija',
     firstName: 'Frensis',
     lastName: 'Fukujama',
+    country: 'SAD',
+    isbn: 1245699,
     year: 1890,
     category: Category.Historic,
     description:
@@ -46,9 +55,12 @@ export class HomepageComponent implements OnInit {
   };
 
   book4: BookDetails = {
+    id: 4,
     title: 'Slepilo',
     firstName: 'Hoze',
     lastName: 'Saramago',
+    country: 'Spanija',
+    isbn: 12456343,
     year: 1890,
     category: Category.Drama,
     description:
@@ -57,9 +69,12 @@ export class HomepageComponent implements OnInit {
   };
 
   book5: BookDetails = {
+    id: 5,
     title: 'Alhemicar',
     firstName: 'Paolo',
     lastName: 'Koeljo',
+    country: 'Spanija',
+    isbn: 12456,
     year: 1890,
     category: Category.Fantasy,
     description:
@@ -68,9 +83,12 @@ export class HomepageComponent implements OnInit {
   };
 
   book6: BookDetails = {
+    id: 6,
     title: 'Vreme zla',
     firstName: 'Dobrica ',
     lastName: 'Cosic',
+    country: 'Srbija',
+    isbn: 12456233,
     year: 1890,
     category: Category.Historic,
     description:

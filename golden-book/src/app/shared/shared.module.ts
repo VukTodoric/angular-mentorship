@@ -6,6 +6,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ButtonComponent } from './components/button/button.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { MaterialModule } from './material/material.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { MaterialModule } from './material/material.module';
     ButtonComponent,
     PaginationComponent,
   ],
-  imports: [CommonModule, MaterialModule],
+  imports: [CommonModule, MaterialModule, AppRoutingModule],
   exports: [
     CardComponent,
     DropdownComponent,

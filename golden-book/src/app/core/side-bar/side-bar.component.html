@@ -1,0 +1,26 @@
+<div class="side-nav-wrapper">
+  <ul>
+    <li routerLink="/homepage" routerLinkActive="router-link-active">
+      <span class="material-symbols-outlined"> home </span><a>Homepage</a>
+    </li>
+    <li>
+      <span class="material-symbols-outlined"> list </span><a>Categories</a>
+    </li>
+    <li>
+      <mat-accordion multi="true">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title
+              ><span class="material-symbols-outlined">
+                admin_panel_settings
+              </span>
+              <a>Admin</a>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <li><a>Books</a></li>
+          <li><a>Categories</a></li>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </li>
+  </ul>
+</div>

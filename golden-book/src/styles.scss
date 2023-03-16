@@ -69,7 +69,6 @@ $golden-book-theme: mat.define-light-theme(
     }
 
     a {
-      color: $gb-primary;
       text-decoration: none;
     }
 
@@ -89,7 +88,7 @@ $golden-book-theme: mat.define-light-theme(
     }
 
     main {
-      padding: 2.5% 0;
+      padding: 1% 0;
       height: 100%;
       overflow: auto;
       background: url("./assets/images/golden-book.png") no-repeat black 5% 50%;
