@@ -5,31 +5,31 @@
       <img [src]="book?.imageSrc" [alt]="book?.title" />
     </div>
     <div class="book-overwiew-wrapper">
-      <div *ngIf="!fullVisibility; else fullDescription">
+      <div *ngIf="fullVisibility; else partialDescription">
         <mat-card-content>
+          <h6>BookId: # {{ book?.id }}</h6>
           <h6>{{ book?.firstName }} {{ book?.lastName }}, {{ book?.year }}</h6>
+          <h6>Country: {{ book?.country }}</h6>
           <h6>Category: {{ book?.category }}</h6>
+          <h6>ISBN: {{ book?.isbn }}</h6>
           <p>{{ book?.description }}</p>
         </mat-card-content>
-
-        <app-button
-          routerLink="/book/:{{ book?.id }}"
-          [label]="buttonLabel"
-          (onClick)="onBookOverview(book)"
-          class="overviewBtn"
-        ></app-button>
       </div>
     </div>
   </div>
 </mat-card>
 
-<ng-template #fullDescription>
+<ng-template #partialDescription>
   <mat-card-content>
-    <h6>BookId: # {{ book?.id }}</h6>
     <h6>{{ book?.firstName }} {{ book?.lastName }}, {{ book?.year }}</h6>
-    <h6>Country: {{ book?.country }}</h6>
     <h6>Category: {{ book?.category }}</h6>
-    <h6>ISBN: {{ book?.isbn }}</h6>
     <p>{{ book?.description }}</p>
   </mat-card-content>
+
+  <app-button
+    routerLink="/book/{{ book?.id }}"
+    [label]="buttonLabel"
+    (onClick)="onBookOverview(book)"
+    class="overviewBtn"
+  ></app-button>
 </ng-template>

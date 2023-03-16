@@ -8,11 +8,11 @@
     ></app-dropdown>
   </div>
   <div class="book-list-wrapper">
-    <app-card
+    <app-book-card
       [fullVisibility]="false"
       *ngFor="let book of booksArray"
       [book]="book"
-    ></app-card>
+    ></app-book-card>
   </div>
   <app-pagination></app-pagination>
 </div>

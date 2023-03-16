@@ -4,10 +4,12 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from '../shared/material/material.module';
 import { BookDetailsComponent } from './books/book-details/book.component';
+import { BookCardComponent } from './books/book-card/book-card.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
-  declarations: [HomepageComponent, BookDetailsComponent],
-  imports: [CommonModule, SharedModule, MaterialModule],
-  exports: [HomepageComponent],
+  declarations: [HomepageComponent, BookDetailsComponent, BookCardComponent],
+  imports: [CommonModule, SharedModule, MaterialModule, AppRoutingModule],
+  exports: [],
 })
 export class FeaturesModule {}
