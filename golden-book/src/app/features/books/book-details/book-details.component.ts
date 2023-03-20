@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../models/category.enum';
-import { BookDetails } from '../models/book.model';
-import { Reviewer } from '../models/reviewer.model';
+import { ActivatedRoute } from '@angular/router';
+import { BookDetails } from '../../models/book.model';
+import { Category } from '../../models/category.enum';
+import { Reviewer } from '../../models/reviewer.model';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss'],
+  selector: 'app-book-details',
+  templateUrl: './book-details.component.html',
+  styleUrls: ['./book-details.component.scss'],
 })
-export class HomepageComponent implements OnInit {
-  pageTitle: string = 'Homepage';
-  searchPlaceholder: string = 'Search by Book Name';
-  filterPlaceholder: string = 'Filter by Category';
+export class BookDetailsComponent implements OnInit {
+  pageTitle: string = 'Book Overview';
+  selectedId?: number;
+  filteredArray!: BookDetails[];
+
+  constructor(private route: ActivatedRoute) {}
 
   reviewer1: Reviewer = {
     id: 1,
@@ -23,7 +26,7 @@ export class HomepageComponent implements OnInit {
 
   book1: BookDetails = {
     id: 1,
-    title: 'Slika Dorijana Greja',
+    title: 'Slika Dorijana Grej',
     firstName: 'Oskar',
     lastName: 'Vajld',
     country: 'Irska',
@@ -46,7 +49,7 @@ export class HomepageComponent implements OnInit {
     year: 1890,
     category: Category.Fantasy,
     description:
-      "Lorem Ipsum is simply dummy textstandard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. ",
+      "Lorem Ipsum is simply dummy textstandard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
     imageSrc: '../../../../assets/images/1984.jfif',
     reviewer: this.reviewer1,
   };
@@ -76,7 +79,7 @@ export class HomepageComponent implements OnInit {
     year: 1890,
     category: Category.Drama,
     description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem specimen book.',
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
     imageSrc: '../../../../assets/images/find-me.jpg',
     reviewer: this.reviewer1,
   };
@@ -106,7 +109,7 @@ export class HomepageComponent implements OnInit {
     year: 1890,
     category: Category.Historic,
     description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ever since the 1500s,  of type and scrambled it to make a type specimen book.',
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
     imageSrc: '../../../../assets/images/money-power.jpg',
     reviewer: this.reviewer1,
   };
@@ -120,16 +123,10 @@ export class HomepageComponent implements OnInit {
     this.book6,
   ];
 
-  categoryArray: Category[] = [
-    Category.Drama,
-    Category.Fantasy,
-    Category.Historic,
-    Category.Romance,
-    Category.ScienceFiction,
-    Category.Thriller,
-  ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.selectedId = this.route.snapshot.params['bookId'];
+    this.filteredArray = this.booksArray.filter(
+      (book) => book.id == this.selectedId
+    );
+  }
 }

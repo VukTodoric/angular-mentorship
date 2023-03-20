@@ -16,3 +16,23 @@
     }
   }
 }
+
+@media only screen and (min-width: 656px) and (max-width: 1024px) {
+  :host {
+    .drawer-container {
+      .side-drawer {
+        width: 32% !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 656px) {
+  :host {
+    .drawer-container {
+      .side-drawer {
+        width: 100% !important;
+      }
+    }
+  }
+}

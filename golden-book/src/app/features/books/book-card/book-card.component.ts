@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookDetails } from 'src/app/features/models/book.model';
 
 @Component({
@@ -12,11 +13,11 @@ export class BookCardComponent implements OnInit {
   @Input() book?: BookDetails;
   @Input() fullVisibility: boolean = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
-  onBookOverview(value: BookDetails | undefined) {
-    console.log(value);
+  onBookOverview() {
+    this.router.navigate(['/book/', this.book?.id]);
   }
 }

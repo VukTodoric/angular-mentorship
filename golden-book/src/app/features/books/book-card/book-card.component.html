@@ -7,12 +7,17 @@
     <div class="book-overwiew-wrapper">
       <div *ngIf="fullVisibility; else partialDescription">
         <mat-card-content>
-          <h6>BookId: # {{ book?.id }}</h6>
+          <h6>BookId: {{ book?.id }}</h6>
           <h6>{{ book?.firstName }} {{ book?.lastName }}, {{ book?.year }}</h6>
           <h6>Country: {{ book?.country }}</h6>
           <h6>Category: {{ book?.category }}</h6>
           <h6>ISBN: {{ book?.isbn }}</h6>
           <p>{{ book?.description }}</p>
+          <h6>
+            {{ book?.reviewer?.name }} {{ book?.reviewer?.lastName }},
+            {{ book?.reviewer?.country }}
+          </h6>
+          <p>{{ book?.reviewer?.review }}</p>
         </mat-card-content>
       </div>
     </div>
@@ -27,9 +32,8 @@
   </mat-card-content>
 
   <app-button
-    routerLink="/book/{{ book?.id }}"
     [label]="buttonLabel"
-    (onClick)="onBookOverview(book)"
+    (onClick)="onBookOverview()"
     class="overviewBtn"
   ></app-button>
 </ng-template>

@@ -1,0 +1,23 @@
+@import "../../../assets/styles/variables.scss";
+
+.page-not-found-wrapper {
+  background-color: $gb-primary;
+  color: $gb-secondary;
+  border-radius: 0.3rem;
+  text-align: center;
+  width: 100%;
+  padding: 15rem 0;
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  ::ng-deep .goBackBtn button {
+    background-color: $gb-secondary;
+    color: $gb-primary;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+}

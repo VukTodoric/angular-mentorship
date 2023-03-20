@@ -1,4 +1,5 @@
 import { Category } from './category.enum';
+import { Reviewer } from './reviewer.model';
 
 export interface BookDetails {
   id: number;
@@ -11,4 +12,5 @@ export interface BookDetails {
   category: Category;
   description: string;
   imageSrc: string;
+  reviewer: Reviewer;
 }

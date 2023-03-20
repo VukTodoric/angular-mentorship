@@ -84,7 +84,7 @@ $golden-book-theme: mat.define-light-theme(
     }
 
     .container {
-      margin: 0 10%;
+      margin: 0 5%;
     }
 
     main {
@@ -107,5 +107,11 @@ $golden-book-theme: mat.define-light-theme(
 
   .material-symbols-outlined {
     font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 200, "opsz" 48;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  .container {
+    margin: 0 15% !important;
   }
 }

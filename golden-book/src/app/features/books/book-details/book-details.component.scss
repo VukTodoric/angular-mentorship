@@ -9,21 +9,72 @@
   }
 
   .book-card-wrapper {
-    ::ng-deep .golden-card {
+    margin: 2rem 0;
+
+    .book-card {
       width: 100%;
 
-      h5 {
-        font-size: 1.1rem;
-      }
+      ::ng-deep .golden-card {
+        max-width: 100%;
 
-      .content-wrapper {
-        h6 {
-          font-size: 0.9rem;
+        h5 {
+          font-size: 1.1rem;
         }
 
+        .content-wrapper {
+          h6 {
+            font-size: 0.9rem;
+          }
+
+          .img-wrapper {
+            width: 50%;
+            min-height: 25rem;
+          }
+
+          .book-overwiew-wrapper {
+            width: 50%;
+            margin-left: 0.5rem;
+
+            .mat-card-content {
+              min-height: 25rem;
+              margin: 0;
+
+              h6 {
+                max-width: 15rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .detailsBtn {
+    display: flex;
+    justify-content: end;
+
+    ::ng-deep button {
+      background-color: $gb-secondary;
+      color: $gb-primary;
+      padding: 1rem 2rem;
+      border-radius: 0.3rem;
+      font-size: 1rem;
+      margin: 1rem 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .book-wrapper {
+    ::ng-deep .golden-card {
+      .content-wrapper {
         .img-wrapper {
-          width: 50%;
-          min-height: 30rem;
+          width: 50% !important;
+          min-height: 30rem !important;
+        }
+        .book-overwiew-wrapper {
+          width: 80% !important;
+          margin-left: 1rem !important;
         }
       }
     }
