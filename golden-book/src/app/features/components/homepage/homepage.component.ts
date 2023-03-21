@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../models/category.enum';
-import { BookDetails } from '../models/book.model';
-import { Reviewer } from '../models/reviewer.model';
+import { BookDetails } from '../../models/book.model';
+import { Category } from '../../models/category.enum';
+import { Reviewer } from '../../models/reviewer.model';
 
 @Component({
   selector: 'app-homepage',

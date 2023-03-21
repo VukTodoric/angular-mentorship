@@ -70,6 +70,7 @@ $golden-book-theme: mat.define-light-theme(
 
     a {
       text-decoration: none;
+      color: $gb-primary;
     }
 
     button {

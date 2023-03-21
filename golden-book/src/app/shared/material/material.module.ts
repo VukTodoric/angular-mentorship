@@ -9,6 +9,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [],
@@ -23,6 +24,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatGridListModule,
     MatSidenavModule,
     MatExpansionModule,
+    MatListModule,
   ],
   exports: [
     MatCardModule,
@@ -34,6 +36,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatGridListModule,
     MatSidenavModule,
     MatExpansionModule,
+    MatListModule,
   ],
 })
 export class MaterialModule {}

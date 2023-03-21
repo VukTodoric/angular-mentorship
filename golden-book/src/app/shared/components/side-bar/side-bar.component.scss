@@ -6,57 +6,57 @@
     margin-right: 1.5rem;
     background-color: black;
     opacity: 0.7;
-    color: $gb-primary;
 
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-
-      li {
-        height: 3rem;
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-        text-transform: uppercase;
-        width: 100%;
+    .menu-list {
+      .mat-list-item {
+        color: $gb-primary;
         cursor: pointer;
+        height: 2.5rem;
 
-        &:hover {
-          background-color: $gb-secondary;
-          opacity: 0.8;
-          border-right: 0.25rem solid $gb-primary;
-        }
-
-        span {
-          margin-right: 1rem;
+        ::ng-deep .mat-list-item-content {
+          padding: 0;
         }
       }
 
-      .mat-expansion-panel::ng-deep {
-        background-color: transparent;
-        color: $gb-primary;
+      a {
+        height: 2.5rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        padding: 0 2rem;
+        font-size: 1rem;
 
-        .mat-expansion-panel-header {
-          padding: 0;
-          margin-right: 0.3rem;
-          height: 3rem;
-
-          .mat-expansion-panel-header-title,
-          .mat-expansion-indicator::after {
-            color: $gb-primary;
-          }
+        span {
+          margin-right: 0.5rem;
         }
-        .mat-expansion-panel-body {
-          padding: 0;
 
-          li {
+        &:hover {
+          opacity: 0.7;
+          background-color: $gb-secondary;
+          border-right: 5px solid $gb-primary;
+        }
+      }
+      .menu-accordion {
+        width: 100%;
+
+        .mat-expansion-panel {
+          color: $gb-primary;
+          background-color: black;
+
+          .mat-expansion-panel-header {
             padding: 0;
+          }
 
-            a {
-              display: block;
-              width: 100%;
-              padding: 1rem 2.5rem;
-            }
+          ::ng-deep .mat-expansion-panel-body {
+            padding: 0;
+          }
+
+          ::ng-deep .mat-expansion-indicator::after {
+            position: absolute;
+            right: 1rem;
+            bottom: 0;
+            color: $gb-primary;
           }
         }
       }

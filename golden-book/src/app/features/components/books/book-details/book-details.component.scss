@@ -1,4 +1,4 @@
-@import "../../../../assets/styles/variables.scss";
+@import "../../../../../assets/styles/variables.scss";
 
 .book-wrapper {
   height: 100%;
@@ -56,7 +56,7 @@
     ::ng-deep button {
       background-color: $gb-secondary;
       color: $gb-primary;
-      padding: 1rem 2rem;
+      padding: 1rem 1.5rem;
       border-radius: 0.3rem;
       font-size: 1rem;
       margin: 1rem 0;
