@@ -7,12 +7,14 @@ import { BookDetailsComponent } from './components/books/book-details/book-detai
 import { BookCardComponent } from './components/books/book-card/book-card.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AddColorDirective } from './directives/add-color.directive';
 @NgModule({
   declarations: [
     HomepageComponent,
     BookDetailsComponent,
     BookCardComponent,
     PageNotFoundComponent,
+    AddColorDirective,
   ],
   imports: [CommonModule, SharedModule, MaterialModule, AppRoutingModule],
   exports: [],

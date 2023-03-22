@@ -109,6 +109,12 @@ $golden-book-theme: mat.define-light-theme(
   .material-symbols-outlined {
     font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 200, "opsz" 48;
   }
+
+  .active-link {
+    opacity: 1;
+    background-color: $gb-secondary;
+    border-right: 5px solid $gb-primary;
+  }
 }
 
 @media only screen and (min-width: 1140px) {

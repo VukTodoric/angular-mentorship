@@ -29,7 +29,7 @@ export class HomepageComponent implements OnInit {
     country: 'Irska',
     isbn: 12456,
     year: 1890,
-    category: Category.Drama,
+    category: Category.GENERAL,
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting indust of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
     imageSrc: '../../../../assets/images/dorijan-grej.jfif',
@@ -44,7 +44,7 @@ export class HomepageComponent implements OnInit {
     country: 'Velika Britanija',
     isbn: 12442456,
     year: 1890,
-    category: Category.Fantasy,
+    category: Category.GENERAL,
     description:
       "Lorem Ipsum is simply dummy textstandard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. ",
     imageSrc: '../../../../assets/images/1984.jfif',
@@ -59,7 +59,7 @@ export class HomepageComponent implements OnInit {
     country: 'SAD',
     isbn: 1245699,
     year: 1890,
-    category: Category.Historic,
+    category: Category.HISTORIY,
     description:
       "Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
     imageSrc: '../../../../assets/images/the-lost-trip.jpg',
@@ -74,7 +74,7 @@ export class HomepageComponent implements OnInit {
     country: 'Spanija',
     isbn: 12456343,
     year: 1890,
-    category: Category.Drama,
+    category: Category.LITERACY,
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem specimen book.',
     imageSrc: '../../../../assets/images/find-me.jpg',
@@ -89,7 +89,7 @@ export class HomepageComponent implements OnInit {
     country: 'Spanija',
     isbn: 12456,
     year: 1890,
-    category: Category.Fantasy,
+    category: Category.FANTASY,
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
     imageSrc: '../../../../assets/images/darkjpg.jpg',
@@ -104,7 +104,7 @@ export class HomepageComponent implements OnInit {
     country: 'Srbija',
     isbn: 12456233,
     year: 1890,
-    category: Category.Historic,
+    category: Category.HISTORIY,
     description:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ever since the 1500s,  of type and scrambled it to make a type specimen book.',
     imageSrc: '../../../../assets/images/money-power.jpg',
@@ -121,12 +121,10 @@ export class HomepageComponent implements OnInit {
   ];
 
   categoryArray: Category[] = [
-    Category.Drama,
-    Category.Fantasy,
-    Category.Historic,
-    Category.Romance,
-    Category.ScienceFiction,
-    Category.Thriller,
+    Category.FANTASY,
+    Category.GENERAL,
+    Category.HISTORIY,
+    Category.LITERACY,
   ];
 
   constructor() {}
