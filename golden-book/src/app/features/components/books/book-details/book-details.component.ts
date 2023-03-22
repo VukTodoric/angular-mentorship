@@ -124,9 +124,9 @@ export class BookDetailsComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.selectedId = this.route.snapshot.params['bookId'];
+    this.selectedId = +this.route.snapshot.params['bookId'];
     this.filteredArray = this.booksArray.filter(
-      (book) => book.id == this.selectedId
+      (book) => book.id === this.selectedId
     );
   }
 }

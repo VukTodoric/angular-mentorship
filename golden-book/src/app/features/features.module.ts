@@ -7,7 +7,6 @@ import { BookDetailsComponent } from './components/books/book-details/book-detai
 import { BookCardComponent } from './components/books/book-card/book-card.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-
 @NgModule({
   declarations: [
     HomepageComponent,

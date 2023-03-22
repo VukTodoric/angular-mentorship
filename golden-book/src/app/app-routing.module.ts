@@ -15,17 +15,28 @@ const routes: Routes = [
     component: HomepageComponent,
   },
   {
-    path: 'book/:bookId',
+    path: 'homepage/:bookId',
     component: BookDetailsComponent,
   },
   {
-    path: '**',
+    path: 'admin',
+    loadChildren: () =>
+      import('./features/components/admin/admin.module').then(
+        (module) => module.AdminModule
+      ),
+  },
+  {
+    path: 'page-not-found',
     component: PageNotFoundComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '/page-not-found',
+    pathMatch: 'full',
   },
 ];
 
 @NgModule({
-  declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })

@@ -18,6 +18,6 @@ export class BookCardComponent implements OnInit {
   ngOnInit(): void {}
 
   onBookOverview() {
-    this.router.navigate(['/book/', this.book?.id]);
+    this.router.navigate(['/homepage', this.book?.id]);
   }
 }

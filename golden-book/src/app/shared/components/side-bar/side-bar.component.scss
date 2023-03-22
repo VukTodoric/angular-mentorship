@@ -32,7 +32,7 @@
         }
 
         &:hover {
-          opacity: 0.7;
+          opacity: 1;
           background-color: $gb-secondary;
           border-right: 5px solid $gb-primary;
         }
@@ -50,6 +50,11 @@
 
           ::ng-deep .mat-expansion-panel-body {
             padding: 0;
+
+            a {
+              text-transform: capitalize;
+              padding-left: 4rem;
+            }
           }
 
           ::ng-deep .mat-expansion-indicator::after {
