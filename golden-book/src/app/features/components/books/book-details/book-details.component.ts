@@ -128,8 +128,5 @@ export class BookDetailsComponent implements OnInit {
     this.filteredArray = this.booksArray.filter(
       (book) => book.id === this.selectedId
     );
-    if (!this.filteredArray) {
-      console.log('jkjhjhkjh');
-    }
   }
 }

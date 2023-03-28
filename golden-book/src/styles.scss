@@ -115,6 +115,20 @@ $golden-book-theme: mat.define-light-theme(
     background-color: $gb-secondary;
     border-right: 5px solid $gb-primary;
   }
+
+  .history {
+    background-color: white !important;
+  }
+
+  .fantasy {
+    background-color: pink !important;
+    color: white !important;
+  }
+
+  .literary {
+    background-color: green !important;
+    color: yellow !important;
+  }
 }
 
 @media only screen and (min-width: 1140px) {

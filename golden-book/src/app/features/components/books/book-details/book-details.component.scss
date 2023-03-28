@@ -64,6 +64,19 @@
   }
 }
 
+.error-wrapper {
+  text-align: center;
+  background-color: $gb-primary;
+  color: $gb-secondary;
+  padding: 10rem 0;
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .book-wrapper {
     ::ng-deep .golden-card {

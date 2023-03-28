@@ -1,4 +1,4 @@
-<div class="book-wrapper">
+<div class="book-wrapper" *ngIf="filteredArray[0]; else hasError">
   <h2>{{ pageTitle }} - {{ filteredArray[0].title }}</h2>
 
   <div class="book-card-wrapper">
@@ -7,6 +7,18 @@
       [fullVisibility]="true"
       [book]="filteredArray[0]"
     ></app-book-card>
-    <app-button class="detailsBtn" label="Close" routerLink="../"></app-button>
+    <app-button
+      class="detailsBtn"
+      label="Close"
+      routerLink="/homepage"
+    ></app-button>
   </div>
 </div>
+
+<ng-template #hasError>
+  <div class="error-wrapper">
+    <h2>
+      <span class="material-symbols-outlined"> error </span>Book is not found!
+    </h2>
+  </div>
+</ng-template>
