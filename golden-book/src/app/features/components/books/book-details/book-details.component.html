@@ -1,11 +1,11 @@
-<div class="book-wrapper" *ngIf="filteredArray[0]; else hasError">
-  <h2>{{ pageTitle }} - {{ filteredArray[0].title }}</h2>
+<div class="book-wrapper" *ngIf="singleBook; else hasError">
+  <h2>{{ pageTitle }} - {{ singleBook.title }}</h2>
 
   <div class="book-card-wrapper">
     <app-book-card
       class="book-card"
       [fullVisibility]="true"
-      [book]="filteredArray[0]"
+      [book]="singleBook"
     ></app-book-card>
     <app-button
       class="detailsBtn"

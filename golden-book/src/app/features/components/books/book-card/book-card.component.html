@@ -2,27 +2,27 @@
   role="article"
   class="golden-card primary-layout"
   appAddColor
-  [category]="book?.category"
+  [category]="book.category"
 >
-  <h5>{{ book?.title }}</h5>
+  <h5>{{ book.title }}</h5>
   <div class="content-wrapper">
     <div class="img-wrapper">
-      <img [src]="book?.imageSrc" [alt]="book?.title" />
+      <img [src]="book.imageSrc" [alt]="book.title" />
     </div>
     <div class="book-overwiew-wrapper">
       <div *ngIf="fullVisibility; else partialDescription">
         <mat-card-content>
-          <h6>BookId: {{ book?.id }}</h6>
-          <h6>{{ book?.firstName }} {{ book?.lastName }}, {{ book?.year }}</h6>
-          <h6>Country: {{ book?.country }}</h6>
-          <h6>Category: {{ book?.category }}</h6>
-          <h6>ISBN: {{ book?.isbn }}</h6>
-          <p>{{ book?.description }}</p>
+          <h6>BookId: {{ book.id }}</h6>
+          <h6>{{ book.firstName }} {{ book.lastName }}, {{ book.year }}</h6>
+          <h6>Country: {{ book.country }}</h6>
+          <h6>Category: {{ book.category }}</h6>
+          <h6>ISBN: {{ book.isbn }}</h6>
+          <p>{{ book.description }}</p>
           <h6>
-            {{ book?.reviewer?.name }} {{ book?.reviewer?.lastName }},
-            {{ book?.reviewer?.country }}
+            {{ book.reviewer.name }} {{ book.reviewer.lastName }},
+            {{ book.reviewer.country }}
           </h6>
-          <p>{{ book?.reviewer?.review }}</p>
+          <p>{{ book.reviewer.review }}</p>
         </mat-card-content>
       </div>
     </div>
@@ -31,9 +31,9 @@
 
 <ng-template #partialDescription>
   <mat-card-content>
-    <h6>{{ book?.firstName }} {{ book?.lastName }}, {{ book?.year }}</h6>
-    <h6>Category: {{ book?.category }}</h6>
-    <p>{{ book?.description }}</p>
+    <h6>{{ book.firstName }} {{ book.lastName }}, {{ book.year }}</h6>
+    <h6>Category: {{ book.category }}</h6>
+    <p>{{ book.description }}</p>
   </mat-card-content>
 
   <app-button

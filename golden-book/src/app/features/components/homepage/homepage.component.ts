@@ -1,133 +1,50 @@
-import { Component, OnInit } from '@angular/core';
-import { BookDetails } from '../../models/book.model';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { BookService } from '../../services/book.service';
+import { Subject, map, takeUntil } from 'rxjs';
 import { Category } from '../../models/category.enum';
-import { Reviewer } from '../../models/reviewer.model';
-
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss'],
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent implements OnInit, OnDestroy {
   pageTitle: string = 'Homepage';
   searchPlaceholder: string = 'Search by Book Name';
   filterPlaceholder: string = 'Filter by Category';
 
-  reviewer1: Reviewer = {
-    id: 1,
-    name: 'Nina',
-    lastName: 'Badzin',
-    country: 'USA',
-    review: `"Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book"`,
-  };
+  private unsubscribe$ = new Subject<void>();
 
-  book1: BookDetails = {
-    id: 1,
-    title: 'Slika Dorijana Greja',
-    firstName: 'Oskar',
-    lastName: 'Vajld',
-    country: 'Irska',
-    isbn: 12456,
-    year: 1890,
-    category: Category.GENERAL,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting indust of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
-    imageSrc: '../../../../assets/images/dorijan-grej.jfif',
-    reviewer: this.reviewer1,
-  };
+  booksArray: any = [];
+  categoryArray?: any = [];
 
-  book2: BookDetails = {
-    id: 2,
-    title: '1984',
-    firstName: 'Dzordz',
-    lastName: 'Orvel',
-    country: 'Velika Britanija',
-    isbn: 12442456,
-    year: 1890,
-    category: Category.GENERAL,
-    description:
-      "Lorem Ipsum is simply dummy textstandard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. ",
-    imageSrc: '../../../../assets/images/1984.jfif',
-    reviewer: this.reviewer1,
-  };
+  constructor(private bookService: BookService) {}
 
-  book3: BookDetails = {
-    id: 3,
-    title: 'Rat civilizacija',
-    firstName: 'Frensis',
-    lastName: 'Fukujama',
-    country: 'SAD',
-    isbn: 1245699,
-    year: 1890,
-    category: Category.HISTORIY,
-    description:
-      "Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
-    imageSrc: '../../../../assets/images/the-lost-trip.jpg',
-    reviewer: this.reviewer1,
-  };
+  ngOnInit(): void {
+    this.getAllBooks();
+    this.getAllCategories();
+  }
 
-  book4: BookDetails = {
-    id: 4,
-    title: 'Slepilo',
-    firstName: 'Hoze',
-    lastName: 'Saramago',
-    country: 'Spanija',
-    isbn: 12456343,
-    year: 1890,
-    category: Category.LITERACY,
-    description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem specimen book.',
-    imageSrc: '../../../../assets/images/find-me.jpg',
-    reviewer: this.reviewer1,
-  };
+  private getAllBooks() {
+    this.bookService
+      .getAll()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((data) => {
+        this.booksArray = data;
+      });
+  }
 
-  book5: BookDetails = {
-    id: 5,
-    title: 'Alhemicar',
-    firstName: 'Paolo',
-    lastName: 'Koeljo',
-    country: 'Spanija',
-    isbn: 12456,
-    year: 1890,
-    category: Category.FANTASY,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
-    imageSrc: '../../../../assets/images/darkjpg.jpg',
-    reviewer: this.reviewer1,
-  };
+  private getAllCategories() {
+    this.bookService
+      .getCategories()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((category) => {
+        this.categoryArray = category;
+        // console.log(category);
+      });
+  }
 
-  book6: BookDetails = {
-    id: 6,
-    title: 'Vreme zla',
-    firstName: 'Dobrica ',
-    lastName: 'Cosic',
-    country: 'Srbija',
-    isbn: 12456233,
-    year: 1890,
-    category: Category.HISTORIY,
-    description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ever since the 1500s,  of type and scrambled it to make a type specimen book.',
-    imageSrc: '../../../../assets/images/money-power.jpg',
-    reviewer: this.reviewer1,
-  };
-
-  booksArray: BookDetails[] = [
-    this.book1,
-    this.book2,
-    this.book3,
-    this.book4,
-    this.book5,
-    this.book6,
-  ];
-
-  categoryArray: Category[] = [
-    Category.FANTASY,
-    Category.GENERAL,
-    Category.HISTORIY,
-    Category.LITERACY,
-  ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
 }
