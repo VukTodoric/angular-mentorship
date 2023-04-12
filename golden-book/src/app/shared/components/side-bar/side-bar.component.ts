@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { SidebarService } from '../../services/sidebar.service';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.scss']
+  styleUrls: ['./side-bar.component.scss'],
 })
 export class SideBarComponent implements OnInit {
+  @ViewChild('drawer', { static: true }) drawer!: MatDrawer;
 
-  constructor() { }
+  constructor(private sidebarService: SidebarService) {}
 
   ngOnInit(): void {
+    this.sidebarService.toggleSidebar$.subscribe((value) => {
+      this.drawer.toggle(value);
+    });
   }
-
 }

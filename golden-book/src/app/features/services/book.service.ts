@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { BookDetails } from '../models/book.model';
 import { environment } from 'src/environments/environment';
 import { Category } from '../models/category.enum';
@@ -9,8 +9,6 @@ import { Category } from '../models/category.enum';
   providedIn: 'root',
 })
 export class BookService {
-  toggle$: Subject<boolean> = new Subject<boolean>();
-
   constructor(private httpClientService: HttpClient) {}
 
   getAll(): Observable<BookDetails[]> {

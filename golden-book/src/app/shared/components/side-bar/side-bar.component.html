@@ -1,39 +1,49 @@
-<div class="side-nav-wrapper">
-  <mat-list role="list" class="menu-list">
-    <mat-list-item role="listitem">
-      <a
-        routerLink="/homepage"
-        routerLinkActive="active-link"
-        [routerLinkActiveOptions]="{ exact: true }"
-        ><span class="material-symbols-outlined"> home </span>Homepage</a
-      >
-    </mat-list-item>
-    <mat-accordion multi="true" class="menu-accordion">
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <a routerLinkActive="active-link"
-            ><span class="material-symbols-outlined"> list </span> Categories</a
+<mat-drawer-container autosize class="drawer-container">
+  <mat-drawer #drawer mode="side" class="side-drawer">
+    <div class="side-nav-wrapper">
+      <mat-list role="list" class="menu-list">
+        <mat-list-item role="listitem">
+          <a
+            routerLink="/homepage"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ><span class="material-symbols-outlined"> home </span>Homepage</a
           >
-        </mat-expansion-panel-header>
-        <a routerLinkActive="active-link">General</a>
-        <a routerLinkActive="active-link">Fantasy</a>
-        <a routerLinkActive="active-link">History</a>
-        <a routerLinkActive="active-link">Literary</a>
-      </mat-expansion-panel>
-    </mat-accordion>
-    <mat-accordion multi="true" class="menu-accordion">
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <a routerLinkActive="active-link"
-            ><span class="material-symbols-outlined">
-              admin_panel_settings
-            </span>
-            Admin</a
-          >
-        </mat-expansion-panel-header>
-        <a routerLink="/admin/books" routerLinkActive="active-link">Books</a>
-        <a routerLinkActive="active-link">Categories</a>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </mat-list>
-</div>
+        </mat-list-item>
+        <mat-accordion multi="true" class="menu-accordion">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <a routerLinkActive="active-link"
+                ><span class="material-symbols-outlined"> list </span>
+                Categories</a
+              >
+            </mat-expansion-panel-header>
+            <a routerLinkActive="active-link">General</a>
+            <a routerLinkActive="active-link">Fantasy</a>
+            <a routerLinkActive="active-link">History</a>
+            <a routerLinkActive="active-link">Literary</a>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion multi="true" class="menu-accordion">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <a routerLinkActive="active-link"
+                ><span class="material-symbols-outlined">
+                  admin_panel_settings
+                </span>
+                Admin</a
+              >
+            </mat-expansion-panel-header>
+            <a routerLink="/admin/books" routerLinkActive="active-link"
+              >Books</a
+            >
+            <a routerLinkActive="active-link">Categories</a>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-list>
+    </div>
+  </mat-drawer>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
