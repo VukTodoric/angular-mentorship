@@ -23,13 +23,6 @@ export class BookCardComponent implements OnInit, OnDestroy {
 
   onBookOverview() {
     this.router.navigate(['/homepage', this.book?.id]);
-
-    this.bookService
-      .getById(this.book)
-      .pipe(take(1))
-      .subscribe((data) => {
-        this.book = data;
-      });
   }
 
   ngOnDestroy(): void {

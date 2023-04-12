@@ -17,14 +17,14 @@ export class BookService {
     );
   }
 
-  getById(bookId: BookDetails): Observable<BookDetails> {
+  getById(id: number): Observable<BookDetails> {
     return this.httpClientService.get<BookDetails>(
-      `${environment.baseApiUrl}books/${bookId.id}`
+      `${environment.baseApiUrl}books/${id}`
     );
   }
 
-  getCategories(): Observable<Category> {
-    return this.httpClientService.get<Category>(
+  getCategories(): Observable<Category[]> {
+    return this.httpClientService.get<Category[]>(
       `${environment.baseApiUrl}categories`
     );
   }

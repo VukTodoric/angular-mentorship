@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
-import { Subject, map, takeUntil } from 'rxjs';
-import { Category } from '../../models/category.enum';
+import { Subject, map, take, takeUntil } from 'rxjs';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -15,7 +14,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();
 
   booksArray: any = [];
-  categoryArray?: any = [];
+  categoryArray?: string[];
 
   constructor(private bookService: BookService) {}
 
@@ -27,7 +26,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
   private getAllBooks() {
     this.bookService
       .getAll()
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(take(1))
       .subscribe((data) => {
         this.booksArray = data;
       });
@@ -36,11 +35,17 @@ export class HomepageComponent implements OnInit, OnDestroy {
   private getAllCategories() {
     this.bookService
       .getCategories()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((category) => {
-        this.categoryArray = category;
-        // console.log(category);
-      });
+      .pipe(
+        takeUntil(this.unsubscribe$),
+        map((data) => {
+          data.forEach((d) => {
+            Object.values(d).forEach((c) => {
+              this.categoryArray = [c];
+            });
+          });
+        })
+      )
+      .subscribe();
   }
 
   ngOnDestroy(): void {

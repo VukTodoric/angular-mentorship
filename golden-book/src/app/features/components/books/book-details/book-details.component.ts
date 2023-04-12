@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookDetails } from '../../../models/book.model';
 import { BookService } from 'src/app/features/services/book.service';
-import { switchMap } from 'rxjs';
+import { Observer, map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-book-details',
@@ -21,9 +21,9 @@ export class BookDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedId = +this.route.snapshot.params['bookId'];
-    this.bookService.getById(this.singleBook).subscribe((data) => {
-      console.log(data);
+    this.bookService.getById(this.selectedId).subscribe((data) => {
       this.singleBook = data;
+      // switchMap(() =>  );
     });
   }
 }
