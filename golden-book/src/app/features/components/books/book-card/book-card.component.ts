@@ -10,6 +10,7 @@ import { BookDetails } from 'src/app/features/models/book.model';
 })
 export class BookCardComponent implements OnInit, OnDestroy {
   buttonLabel: string = 'Book overview';
+  deleteLabel: string = 'Delete';
 
   @Input() book!: BookDetails;
   @Input() fullVisibility: boolean = false;
@@ -23,6 +24,8 @@ export class BookCardComponent implements OnInit, OnDestroy {
   onBookOverview() {
     this.router.navigate(['/book', this.book?.id]);
   }
+
+  onBookDelete() {}
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();

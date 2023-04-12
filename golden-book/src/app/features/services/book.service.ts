@@ -23,6 +23,12 @@ export class BookService {
     );
   }
 
+  deleteBook(id: number): Observable<BookDetails> {
+    return this.httpClientService.get<BookDetails>(
+      `${environment.baseApiUrl}books/${id}`
+    );
+  }
+
   getCategories(): Observable<Category[]> {
     return this.httpClientService.get<Category[]>(
       `${environment.baseApiUrl}categories`

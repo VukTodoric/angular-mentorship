@@ -1,0 +1,138 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Slika Dorijana Greja",
+      "firstName": "Oskar",
+      "lastName": "Vajld",
+      "country": "Irska",
+      "isbn": 12456,
+      "year": 1890,
+      "category": "General",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting indust of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
+      "imageSrc": "../../../../assets/images/dorijan-grej.jfif",
+      "reviewer": [
+        {
+          "id": 1,
+          "name": "Nina",
+          "lastName": "Badzin",
+          "country": "USA",
+          "review": "Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "1984",
+      "firstName": "Dzordz",
+      "lastName": "Orvel",
+      "country": "Velika Britanija",
+      "isbn": 12442456,
+      "year": 1890,
+      "category": "General",
+      "description": "Lorem Ipsum is simply dummy textstandard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. ",
+      "imageSrc": "../../../../assets/images/1984.jfif",
+      "reviewer": [
+        {
+          "id": 1,
+          "name": "Nina",
+          "lastName": "Badzin",
+          "country": "USA",
+          "review": "Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Rat civilizacija",
+      "firstName": "Frensis",
+      "lastName": "Fukujama",
+      "country": "SAD",
+      "isbn": 1245699,
+      "year": 1890,
+      "category": "History",
+      "description": "Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
+      "imageSrc": "../../../../assets/images/the-lost-trip.jpg",
+      "reviewer": [
+        {
+          "id": 1,
+          "name": "Nina",
+          "lastName": "Badzin",
+          "country": "USA",
+          "review": "Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Slepilo",
+      "firstName": "Hoze",
+      "lastName": "Saramago",
+      "country": "Spanija",
+      "isbn": 12456343,
+      "year": 1890,
+      "category": "Literacy",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem specimen book.",
+      "imageSrc": "../../../../assets/images/find-me.jpg",
+      "reviewer": [
+        {
+          "id": 1,
+          "name": "Nina",
+          "lastName": "Badzin",
+          "country": "USA",
+          "review": "Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Alhemicar",
+      "firstName": "Paolo",
+      "lastName": "Koeljo",
+      "country": "Spanija",
+      "isbn": 12456,
+      "year": 1890,
+      "category": "Fantasy",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesettingthe industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book.",
+      "imageSrc": "../../../../assets/images/darkjpg.jpg",
+      "reviewer": [
+        {
+          "id": 1,
+          "name": "Nina",
+          "lastName": "Badzin",
+          "country": "USA",
+          "review": "Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Vreme zla",
+      "firstName": "Dobrica ",
+      "lastName": "Cosic",
+      "country": "Srbija",
+      "isbn": 12456233,
+      "year": 1890,
+      "category": "History",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ever since the 1500s,  of type and scrambled it to make a type specimen book.",
+      "imageSrc": "../../../../assets/images/money-power.jpg",
+      "reviewer": [
+        {
+          "id": 1,
+          "name": "Nina",
+          "lastName": "Badzin",
+          "country": "USA",
+          "review": "Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printinum has been the industry's standard dummy text ever since the 1500s,  of type and scrambled it to make a type specimen book"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "general": "General",
+      "fantasy": "Fantasy",
+      "literacy": "Literacy",
+      "history": "History"
+    }
+  ]
+}
