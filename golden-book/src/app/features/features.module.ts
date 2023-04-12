@@ -8,15 +8,17 @@ import { BookCardComponent } from './components/books/book-card/book-card.compon
 import { AppRoutingModule } from '../app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AddColorDirective } from './directives/add-color.directive';
+import { BookComponent } from './components/books/book/book.component';
 @NgModule({
   declarations: [
     HomepageComponent,
-    BookDetailsComponent,
     BookCardComponent,
     PageNotFoundComponent,
     AddColorDirective,
+    BookComponent,
+    BookDetailsComponent,
   ],
   imports: [CommonModule, SharedModule, MaterialModule, AppRoutingModule],
-  exports: [],
+  exports: [BookCardComponent],
 })
 export class FeaturesModule {}

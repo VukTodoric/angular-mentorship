@@ -23,7 +23,6 @@ export class BookDetailsComponent implements OnInit {
     this.selectedId = +this.route.snapshot.params['bookId'];
     this.bookService.getById(this.selectedId).subscribe((data) => {
       this.singleBook = data;
-      // switchMap(() =>  );
     });
   }
 }

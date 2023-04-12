@@ -3,21 +3,35 @@ import { RouterModule, Routes } from '@angular/router';
 import { BookDetailsComponent } from './features/components/books/book-details/book-details.component';
 import { HomepageComponent } from './features/components/homepage/homepage.component';
 import { PageNotFoundComponent } from './features/components/page-not-found/page-not-found.component';
+import { BookComponent } from './features/components/books/book/book.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'homepage',
+    redirectTo: 'homepage/',
     pathMatch: 'full',
   },
   {
     path: 'homepage',
     component: HomepageComponent,
+    children: [
+      {
+        path: '',
+        component: BookComponent,
+      },
+    ],
   },
   {
-    path: 'homepage/:bookId',
+    path: 'book/:bookId',
     component: BookDetailsComponent,
   },
+  // {
+  //   path: 'book',
+  //   loadChildren: () =>
+  //     import('./features/components/books/books.module').then(
+  //       (module) => module.BooksModule
+  //     ),
+  // },
   {
     path: 'admin',
     loadChildren: () =>

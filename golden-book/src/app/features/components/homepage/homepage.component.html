@@ -1,19 +1,4 @@
 <div class="home-page-wrapper">
   <h2>{{ pageTitle }}</h2>
-  <div class="search-filter-wrapper">
-    <app-search [placeholder]="searchPlaceholder"></app-search>
-    <app-dropdown
-      [placeholder]="filterPlaceholder"
-      [selectField]="categoryArray"
-    ></app-dropdown>
-  </div>
-  <div class="book-list-wrapper">
-    <app-book-card
-      class="book-card"
-      [fullVisibility]="false"
-      *ngFor="let book of booksArray"
-      [book]="book"
-    ></app-book-card>
-  </div>
-  <app-pagination></app-pagination>
+  <router-outlet></router-outlet>
 </div>

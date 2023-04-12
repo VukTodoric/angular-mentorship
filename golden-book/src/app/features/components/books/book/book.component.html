@@ -1,0 +1,16 @@
+<div class="search-filter-wrapper">
+  <app-search [placeholder]="searchPlaceholder"></app-search>
+  <app-dropdown
+    [placeholder]="filterPlaceholder"
+    [selectField]="categoryArray"
+  ></app-dropdown>
+</div>
+<div class="book-list-wrapper">
+  <app-book-card
+    class="book-card"
+    [fullVisibility]="false"
+    *ngFor="let book of booksArray"
+    [book]="book"
+  ></app-book-card>
+</div>
+<app-pagination></app-pagination>

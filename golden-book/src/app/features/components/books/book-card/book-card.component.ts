@@ -1,8 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject, map, take, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
 import { BookDetails } from 'src/app/features/models/book.model';
-import { BookService } from 'src/app/features/services/book.service';
 
 @Component({
   selector: 'app-book-card',
@@ -17,12 +16,12 @@ export class BookCardComponent implements OnInit, OnDestroy {
 
   private unsubscribe$ = new Subject<void>();
 
-  constructor(private router: Router, private bookService: BookService) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   onBookOverview() {
-    this.router.navigate(['/homepage', this.book?.id]);
+    this.router.navigate(['/book', this.book?.id]);
   }
 
   ngOnDestroy(): void {

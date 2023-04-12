@@ -16,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     CoreModule,
     SharedModule,
-    FeaturesModule,
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
