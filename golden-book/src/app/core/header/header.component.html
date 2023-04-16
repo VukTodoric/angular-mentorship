@@ -1,7 +1,9 @@
 <header>
   <nav>
     <div class="logo-wrapper">
-      <ng-content></ng-content>
+      <app-button class="menu-btn" (onClick)="onToggleSidebar()">
+        <span class="material-symbols-outlined"> menu </span>
+      </app-button>
       <h1 class="logo">Golden Book.</h1>
     </div>
     <div class="login-wrapper">

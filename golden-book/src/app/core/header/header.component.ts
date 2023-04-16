@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from 'src/app/shared/services/sidebar.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  toggle: boolean = false;
 
-  constructor() { }
+  constructor(private sidebarService: SidebarService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onToggleSidebar() {
+    this.toggle = !this.toggle;
+    this.sidebarService.toggleSidebar$.next(this.toggle);
   }
-
 }

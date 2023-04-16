@@ -16,7 +16,6 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     PaginationComponent,
     SideBarComponent,
   ],
-  imports: [CommonModule, MaterialModule, AppRoutingModule],
   exports: [
     DropdownComponent,
     SearchComponent,
@@ -24,5 +23,6 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     PaginationComponent,
     SideBarComponent,
   ],
+  imports: [CommonModule, MaterialModule, AppRoutingModule],
 })
 export class SharedModule {}

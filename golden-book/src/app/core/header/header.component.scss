@@ -1,3 +1,5 @@
+@import "../../../assets/styles/variables.scss";
+
 header {
   height: 3rem;
   background: linear-gradient(
@@ -17,6 +19,11 @@ header {
       display: flex;
       align-items: center;
       max-width: 100%;
+
+      .menu-btn ::ng-deep button {
+        background-color: transparent;
+        color: $gb-primary;
+      }
 
       .logo {
         letter-spacing: 4px;
