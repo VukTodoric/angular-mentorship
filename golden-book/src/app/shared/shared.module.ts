@@ -6,7 +6,6 @@ import { ButtonComponent } from './components/button/button.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from '../app-routing.module';
-import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,14 +13,12 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     SearchComponent,
     ButtonComponent,
     PaginationComponent,
-    SideBarComponent,
   ],
   exports: [
     DropdownComponent,
     SearchComponent,
     ButtonComponent,
     PaginationComponent,
-    SideBarComponent,
   ],
   imports: [CommonModule, MaterialModule, AppRoutingModule],
 })

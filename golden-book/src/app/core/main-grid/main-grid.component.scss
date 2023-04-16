@@ -1,0 +1,14 @@
+@import "../../../assets/styles/variables.scss";
+
+:host {
+  .drawer-container {
+    background-color: transparent;
+    min-height: 50rem;
+
+    .side-drawer {
+      background-color: transparent;
+      border-right: 1px solid $gb-primary;
+      width: 22%;
+    }
+  }
+}

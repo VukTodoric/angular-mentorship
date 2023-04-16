@@ -1,4 +1,4 @@
-@import "../../../../assets/styles/variables.scss";
+@import "../../../assets/styles/variables.scss";
 
 :host {
   .drawer-container {
@@ -81,20 +81,20 @@
 
 @media only screen and (min-width: 656px) and (max-width: 1024px) {
   :host {
-    .drawer-container {
-      .side-drawer {
-        width: 32% !important;
-      }
+    // .drawer-container {
+    .side-drawer {
+      width: 32% !important;
     }
+    // }
   }
 }
 
 @media only screen and (max-width: 656px) {
   :host {
-    .drawer-container {
-      .side-drawer {
-        width: 100% !important;
-      }
+    // .drawer-container {
+    .side-drawer {
+      width: 100% !important;
     }
+    // }
   }
 }
