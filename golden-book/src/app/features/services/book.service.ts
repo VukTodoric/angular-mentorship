@@ -23,9 +23,18 @@ export class BookService {
     );
   }
 
-  deleteBook(id: number): Observable<BookDetails> {
-    return this.httpClientService.get<BookDetails>(
-      `${environment.baseApiUrl}books/${id}`
+  deleteBook(book: BookDetails): Observable<BookDetails> {
+    return this.httpClientService.delete<BookDetails>(
+      `${environment.baseApiUrl}books/${book.id}`
+    );
+  }
+
+  softDeleteBook(book: BookDetails): Observable<BookDetails> {
+    const deletedTime = new Date();
+
+    return this.httpClientService.patch<BookDetails>(
+      `${environment.baseApiUrl}books/${book.id}`,
+      { deletedAt: deletedTime }
     );
   }
 

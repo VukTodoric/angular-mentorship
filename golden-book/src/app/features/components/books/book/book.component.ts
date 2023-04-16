@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, map, take, takeUntil } from 'rxjs';
+import { Subject, map, take, takeUntil, tap } from 'rxjs';
 import { BookDetails } from 'src/app/features/models/book.model';
 import { BookService } from 'src/app/features/services/book.service';
 
@@ -15,7 +15,7 @@ export class BookComponent implements OnInit {
   private unsubscribe$ = new Subject<void>();
 
   booksArray: any = [];
-  categoryArray?: string[];
+  categoryArray?: string[] = [];
   constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
@@ -37,10 +37,10 @@ export class BookComponent implements OnInit {
       .getCategories()
       .pipe(
         takeUntil(this.unsubscribe$),
-        map((res) => {
+        tap((res) => {
           res.forEach((value) => {
             Object.values(value).forEach((category) => {
-              this.categoryArray = [category];
+              this.categoryArray?.push(category);
             });
           });
         })

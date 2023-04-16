@@ -13,4 +13,5 @@ export interface BookDetails {
   description: string;
   imageSrc: string;
   reviewer: Reviewer;
+  deletedAt?: null;
 }
