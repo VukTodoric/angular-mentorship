@@ -19,13 +19,6 @@ import { BookComponent } from './components/books/book/book.component';
     BookDetailsComponent,
   ],
   imports: [CommonModule, SharedModule, MaterialModule, AppRoutingModule],
-  exports: [
-    HomepageComponent,
-    BookCardComponent,
-    PageNotFoundComponent,
-    AddColorDirective,
-    BookComponent,
-    BookDetailsComponent,
-  ],
+  exports: [],
 })
 export class FeaturesModule {}

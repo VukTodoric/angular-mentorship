@@ -7,19 +7,16 @@ import { MainGridComponent } from './main-grid/main-grid.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { MaterialModule } from '../shared/material/material.module';
 import { AppRoutingModule } from '../app-routing.module';
+
+const COMPONETS = [
+  FooterComponent,
+  HeaderComponent,
+  MainGridComponent,
+  SideBarComponent,
+];
 @NgModule({
-  declarations: [
-    FooterComponent,
-    HeaderComponent,
-    MainGridComponent,
-    SideBarComponent,
-  ],
+  declarations: [...COMPONETS],
   imports: [CommonModule, SharedModule, MaterialModule, AppRoutingModule],
-  exports: [
-    FooterComponent,
-    HeaderComponent,
-    MainGridComponent,
-    SideBarComponent,
-  ],
+  exports: [...COMPONETS],
 })
 export class CoreModule {}

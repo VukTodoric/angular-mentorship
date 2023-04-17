@@ -7,19 +7,15 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from '../app-routing.module';
 
+const COMPONENTS = [
+  DropdownComponent,
+  SearchComponent,
+  ButtonComponent,
+  PaginationComponent,
+];
 @NgModule({
-  declarations: [
-    DropdownComponent,
-    SearchComponent,
-    ButtonComponent,
-    PaginationComponent,
-  ],
-  exports: [
-    DropdownComponent,
-    SearchComponent,
-    ButtonComponent,
-    PaginationComponent,
-  ],
+  declarations: [...COMPONENTS],
+  exports: [...COMPONENTS],
   imports: [CommonModule, MaterialModule, AppRoutingModule],
 })
 export class SharedModule {}

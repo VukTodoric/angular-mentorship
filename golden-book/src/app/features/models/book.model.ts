@@ -8,7 +8,7 @@ export interface BookDetails {
   lastName: string;
   country: string;
   isbn: number;
-  year: number;
+  year: Date;
   category: Category;
   description: string;
   imageSrc: string;

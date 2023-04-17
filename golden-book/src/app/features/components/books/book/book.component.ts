@@ -20,7 +20,7 @@ export class BookComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllBooks();
-    this.getAllCategories();
+    // this.getAllCategories();
   }
 
   private getAllBooks() {
@@ -32,21 +32,21 @@ export class BookComponent implements OnInit {
       });
   }
 
-  private getAllCategories() {
-    this.bookService
-      .getCategories()
-      .pipe(
-        takeUntil(this.unsubscribe$),
-        tap((res) => {
-          res.forEach((value) => {
-            Object.values(value).forEach((category) => {
-              this.categoryArray?.push(category);
-            });
-          });
-        })
-      )
-      .subscribe();
-  }
+  // private getAllCategories() {
+  //   this.bookService
+  //     .getCategories()
+  //     .pipe(
+  //       takeUntil(this.unsubscribe$),
+  //       tap((res) => {
+  //         res.forEach((value) => {
+  //           Object.values(value).forEach((category) => {
+  //             this.categoryArray?.push(category);
+  //           });
+  //         });
+  //       })
+  //     )
+  //     .subscribe();
+  // }
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
