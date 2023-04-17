@@ -18,10 +18,9 @@
                 Categories</a
               >
             </mat-expansion-panel-header>
-            <a routerLinkActive="active-link">General</a>
-            <a routerLinkActive="active-link">Fantasy</a>
-            <a routerLinkActive="active-link">History</a>
-            <a routerLinkActive="active-link">Literary</a>
+            <ng-container *ngFor="let category of categoryArray">
+              <a routerLinkActive="active-link">{{ category }}</a>
+            </ng-container>
           </mat-expansion-panel>
         </mat-accordion>
         <mat-accordion multi="true" class="menu-accordion">

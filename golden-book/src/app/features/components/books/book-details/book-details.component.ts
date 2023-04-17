@@ -21,7 +21,11 @@ export class BookDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedId = +this.route.snapshot.params['bookId'];
-    this.bookService.getById(this.selectedId).subscribe((data) => {
+    this.getBookById(this.selectedId);
+  }
+
+  private getBookById(id: number) {
+    this.bookService.getById(id).subscribe((data) => {
       this.singleBook = data;
     });
   }

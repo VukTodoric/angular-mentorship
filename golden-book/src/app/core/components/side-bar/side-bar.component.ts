@@ -1,6 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SidebarService } from '../../services/sidebar.service';
 import { MatDrawer } from '@angular/material/sidenav';
+import { CategoriesService } from 'src/app/features/services/categories.service';
+import { map, take } from 'rxjs';
+import { Category } from 'src/app/features/models/category.model';
 
 @Component({
   selector: 'app-side-bar',
@@ -9,10 +12,33 @@ import { MatDrawer } from '@angular/material/sidenav';
 })
 export class SideBarComponent implements OnInit {
   @ViewChild('drawer', { static: true }) drawer!: MatDrawer;
+  categoryArray!: string[];
 
-  constructor(private sidebarService: SidebarService) {}
+  constructor(
+    private sidebarService: SidebarService,
+    private categoriesService: CategoriesService
+  ) {}
 
   ngOnInit(): void {
+    this.toggleMenu();
+    this.getAllCategories();
+  }
+
+  private getAllCategories() {
+    this.categoriesService
+      .getCategories()
+      .pipe(
+        take(1),
+        map((categories: Category[]) =>
+          categories.map((category: Category) => category.name)
+        )
+      )
+      .subscribe((categories) => {
+        this.categoryArray = categories;
+      });
+  }
+
+  private toggleMenu() {
     this.sidebarService.toggleSidebar$.subscribe((value) => {
       this.drawer.toggle(value);
     });

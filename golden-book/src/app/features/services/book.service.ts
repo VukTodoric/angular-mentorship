@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BookDetails } from '../models/book.model';
 import { environment } from 'src/environments/environment';
-import { Category } from '../models/category.enum';
+import { Category } from '../models/category.model';
 
 @Injectable({
   providedIn: 'root',
@@ -35,12 +35,6 @@ export class BookService {
     return this.httpClientService.patch<BookDetails>(
       `${environment.baseApiUrl}books/${book.id}`,
       { deletedAt: deletedTime }
-    );
-  }
-
-  getCategories(): Observable<Category[]> {
-    return this.httpClientService.get<Category[]>(
-      `${environment.baseApiUrl}categories`
     );
   }
 }

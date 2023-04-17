@@ -1,11 +1,11 @@
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
-import { Category } from '../models/category.enum';
+import { Category } from '../models/category.model';
 
 @Directive({
   selector: '[appAddColor]',
 })
 export class AddColorDirective implements OnInit {
-  @Input() category?: Category;
+  @Input() category!: Category;
 
   constructor(private el: ElementRef) {}
 
@@ -14,14 +14,14 @@ export class AddColorDirective implements OnInit {
   }
 
   checkCategory() {
-    switch (this.category) {
-      case Category.FANTASY:
+    switch (this.category.name) {
+      case 'Fantasy':
         this.el.nativeElement.classList.add('fantasy');
         break;
-      case Category.HISTORIY:
+      case 'History':
         this.el.nativeElement.classList.add('history');
         break;
-      case Category.LITERACY:
+      case 'Literacy':
         this.el.nativeElement.classList.add('literary');
         break;
     }

@@ -1,4 +1,4 @@
-import { Category } from './category.enum';
+import { Category } from './category.model';
 import { Reviewer } from './reviewer.model';
 
 export interface BookDetails {

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, map, take, takeUntil, tap } from 'rxjs';
+import { Subject, filter, map, take, takeUntil, tap } from 'rxjs';
 import { BookDetails } from 'src/app/features/models/book.model';
+import { Category } from 'src/app/features/models/category.model';
 import { BookService } from 'src/app/features/services/book.service';
+import { CategoriesService } from 'src/app/features/services/categories.service';
 
 @Component({
   selector: 'app-book',
@@ -12,15 +14,18 @@ export class BooksWrapperComponent implements OnInit {
   searchPlaceholder: string = 'Search by Book Name';
   filterPlaceholder: string = 'Filter by Category';
   booksArray: any = [];
-  categoryArray?: string[] = [];
+  categoryArray!: string[];
 
   private unsubscribe$ = new Subject<void>();
 
-  constructor(private bookService: BookService) {}
+  constructor(
+    private bookService: BookService,
+    private categoriesService: CategoriesService
+  ) {}
 
   ngOnInit(): void {
     this.getAllBooks();
-    // this.getAllCategories();
+    this.getAllCategories();
   }
 
   private getAllBooks() {
@@ -32,21 +37,19 @@ export class BooksWrapperComponent implements OnInit {
       });
   }
 
-  // private getAllCategories() {
-  //   this.bookService
-  //     .getCategories()
-  //     .pipe(
-  //       takeUntil(this.unsubscribe$),
-  //       tap((res) => {
-  //         res.forEach((value) => {
-  //           Object.values(value).forEach((category) => {
-  //             this.categoryArray?.push(category);
-  //           });
-  //         });
-  //       })
-  //     )
-  //     .subscribe();
-  // }
+  private getAllCategories() {
+    this.categoriesService
+      .getCategories()
+      .pipe(
+        take(1),
+        map((categories: Category[]) =>
+          categories.map((category: Category) => category.name)
+        )
+      )
+      .subscribe((categories) => {
+        this.categoryArray = categories;
+      });
+  }
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
