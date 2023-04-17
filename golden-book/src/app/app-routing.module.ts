@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BookDetailsComponent } from './features/components/books/book-details/book-details.component';
 import { HomepageComponent } from './features/components/homepage/homepage.component';
 import { PageNotFoundComponent } from './features/components/page-not-found/page-not-found.component';
-import { BookComponent } from './features/components/books/book/book.component';
+import { BooksWrapperComponent } from './features/components/books/books-wrapper/books-wrapper.component';
 
 const routes: Routes = [
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: BookComponent,
+        component: BooksWrapperComponent,
       },
     ],
   },

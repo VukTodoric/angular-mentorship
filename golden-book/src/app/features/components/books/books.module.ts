@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FeaturesModule } from '../../features.module';
 import { CommonModule } from '@angular/common';
 import { BookDetailsComponent } from './book-details/book-details.component';
 

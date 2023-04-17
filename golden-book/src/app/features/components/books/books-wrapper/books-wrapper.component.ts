@@ -5,17 +5,17 @@ import { BookService } from 'src/app/features/services/book.service';
 
 @Component({
   selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss'],
+  templateUrl: './books-wrapper.component.html',
+  styleUrls: ['./books-wrapper.component.scss'],
 })
-export class BookComponent implements OnInit {
+export class BooksWrapperComponent implements OnInit {
   searchPlaceholder: string = 'Search by Book Name';
   filterPlaceholder: string = 'Filter by Category';
+  booksArray: any = [];
+  categoryArray?: string[] = [];
 
   private unsubscribe$ = new Subject<void>();
 
-  booksArray: any = [];
-  categoryArray?: string[] = [];
   constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
@@ -26,7 +26,7 @@ export class BookComponent implements OnInit {
   private getAllBooks() {
     this.bookService
       .getAll()
-      .pipe(take(1))
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe((data) => {
         this.booksArray = data;
       });
