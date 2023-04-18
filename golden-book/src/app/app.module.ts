@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FeaturesModule } from './features/features.module';
 
@@ -15,7 +14,6 @@ import { FeaturesModule } from './features/features.module';
     CoreModule,
     FeaturesModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     HttpClientModule,
   ],
   providers: [],
