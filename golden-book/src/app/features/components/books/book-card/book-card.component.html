@@ -47,4 +47,10 @@
     (onClick)="onBookDelete(book)"
     class="deleteBtn"
   ></app-button>
+
+  <app-button
+    [label]="softDeleteLabel"
+    (onClick)="onSoftDeleteBook(book)"
+    class="softDeleteBtn"
+  ></app-button>
 </ng-template>

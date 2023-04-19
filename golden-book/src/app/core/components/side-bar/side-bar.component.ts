@@ -21,12 +21,12 @@ export class SideBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.toggleMenu();
+    this.categoriesService.setCategories();
     this.getAllCategories();
   }
 
-  private getAllCategories() {
-    this.categoriesService
-      .getCategories()
+  getAllCategories() {
+    this.categoriesService.categories$
       .pipe(
         take(1),
         map((categories: Category[]) =>

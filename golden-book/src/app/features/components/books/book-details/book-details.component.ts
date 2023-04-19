@@ -25,7 +25,7 @@ export class BookDetailsComponent implements OnInit {
   }
 
   private getBookById(id: number) {
-    this.bookService.getById(id).subscribe((data) => {
+    this.bookService.getBookById(id).subscribe((data) => {
       this.singleBook = data;
     });
   }

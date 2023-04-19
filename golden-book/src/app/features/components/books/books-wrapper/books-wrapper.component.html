@@ -11,6 +11,8 @@
     [fullVisibility]="false"
     *ngFor="let book of booksArray"
     [book]="book"
+    (delete)="getAllActiveBooks()"
+    (softDelete)="getAllActiveBooks()"
   ></app-book-card>
 </div>
 <app-pagination></app-pagination>

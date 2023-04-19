@@ -13,7 +13,7 @@ import { CategoriesService } from 'src/app/features/services/categories.service'
 export class BooksWrapperComponent implements OnInit {
   searchPlaceholder: string = 'Search by Book Name';
   filterPlaceholder: string = 'Filter by Category';
-  booksArray: any = [];
+  booksArray: BookDetails[] = [];
   categoryArray!: string[];
 
   private unsubscribe$ = new Subject<void>();
@@ -24,22 +24,21 @@ export class BooksWrapperComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getAllBooks();
+    this.getAllActiveBooks();
     this.getAllCategories();
   }
 
-  private getAllBooks() {
+  getAllActiveBooks() {
     this.bookService
-      .getAll()
+      .getAllBooks()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((data) => {
         this.booksArray = data;
       });
   }
 
-  private getAllCategories() {
-    this.categoriesService
-      .getCategories()
+  getAllCategories() {
+    this.categoriesService.categories$
       .pipe(
         take(1),
         map((categories: Category[]) =>

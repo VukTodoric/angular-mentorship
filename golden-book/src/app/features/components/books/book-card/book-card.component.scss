@@ -60,7 +60,7 @@
 
         .overviewBtn button {
           position: absolute;
-          bottom: 3rem;
+          bottom: 5rem;
           background-color: $gb-secondary;
           padding: 0.35rem 0;
           border-radius: 0.25rem;
@@ -76,8 +76,21 @@
           font-weight: bold;
           letter-spacing: 2px;
           border-radius: 0.25rem;
+          bottom: 3rem;
+          width: 45%;
+          border: 1px solid $gb-secondary;
+        }
+
+        .softDeleteBtn button {
+          padding: 0.35rem 0;
+          position: absolute;
+          font-weight: bold;
+          letter-spacing: 2px;
+          border-radius: 0.25rem;
           bottom: 1rem;
           width: 45%;
+          -webkit-text-stroke: 0.1px black;
+          -webkit-text-fill-color: white;
           border: 1px solid $gb-secondary;
         }
       }
