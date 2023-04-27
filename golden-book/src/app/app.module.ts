@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FeaturesModule } from './features/features.module';
+import { DialogModule } from './features/components/dialogs/dialog.module';
 
 @NgModule({
   declarations: [AppComponent],

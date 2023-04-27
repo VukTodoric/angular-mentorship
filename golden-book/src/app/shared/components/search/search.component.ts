@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -7,12 +7,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
   @Input() placeholder?: string;
+  @Output() searchResult = new EventEmitter<string>();
+
+  defaultValue = '';
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const filter = localStorage.getItem('filter');
+    if (filter) {
+      const filterToString = JSON.parse(filter);
+      this.defaultValue = filterToString.userSerch;
+    }
+  }
 
   onSearchAction(input: HTMLInputElement) {
-    console.log(input.value);
+    this.searchResult.emit(input.value);
   }
 }

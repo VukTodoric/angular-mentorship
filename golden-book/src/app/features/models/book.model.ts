@@ -9,7 +9,7 @@ export interface BookDetails {
   country: string;
   isbn: number;
   year: Date;
-  category: Category;
+  category: string;
   description: string;
   imageSrc: string;
   reviewer: Reviewer;

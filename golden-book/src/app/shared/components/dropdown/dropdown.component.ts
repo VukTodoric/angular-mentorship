@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -9,7 +9,20 @@ export class DropdownComponent implements OnInit {
   @Input() placeholder?: string;
   @Input() selectField?: string[];
 
+  @Output() selectedValue = new EventEmitter<string>();
+
+  defaultValue = '';
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const filter = localStorage.getItem('filter');
+    if (filter) {
+      const filterToString = JSON.parse(filter);
+      this.defaultValue = filterToString.categoryName;
+    }
+  }
+
+  onChange(event: string) {
+    this.selectedValue.emit(event);
+  }
 }

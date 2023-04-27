@@ -7,7 +7,7 @@ import { BooksWrapperComponent } from './features/components/books/books-wrapper
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'homepage/',
+    redirectTo: 'homepage',
     pathMatch: 'full',
   },
   {

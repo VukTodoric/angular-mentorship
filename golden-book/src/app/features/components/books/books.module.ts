@@ -7,6 +7,7 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
 import { AddColorDirective } from '../../directives/add-color.directive';
 import { BooksWrapperComponent } from './books-wrapper/books-wrapper.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { DialogModule } from '../dialogs/dialog.module';
 
 const routes: Routes = [
   {

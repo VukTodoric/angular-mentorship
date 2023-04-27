@@ -1,0 +1,37 @@
+@import "../../../../../../assets/styles/variables.scss";
+.table-wrapper {
+  margin: 3rem 0;
+
+  table {
+    background-color: $gb-primary;
+    color: $gb-secondary;
+
+    td {
+      padding: 0.5rem;
+      min-width: 7rem;
+
+      img {
+        height: 5rem;
+        width: 4rem;
+      }
+
+      a {
+        color: blue;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      P {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+
+  .table-paginator {
+    background-color: $gb-primary;
+    color: $gb-secondary;
+  }
+}

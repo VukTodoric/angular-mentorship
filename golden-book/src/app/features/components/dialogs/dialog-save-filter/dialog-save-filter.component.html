@@ -1,0 +1,14 @@
+<!-- <app-dialog-modal class="dialog-modal" [title]="'Do you want to save filters?'">
+  <mat-dialog-actions align="start">
+    <button mat-button mat-dialog-close>Yes</button>
+    <button mat-button mat-dialog-close>No</button>
+  </mat-dialog-actions>
+</app-dialog-modal> -->
+<!-- Pitanje za diskusiju !!! -->
+<h1 mat-dialog-title>Do you want to save filters?</h1>
+<div mat-dialog-content>
+  <mat-dialog-actions align="center">
+    <button mat-button (click)="onYes()">Yes</button>
+    <button mat-button (click)="onNo()">No</button>
+  </mat-dialog-actions>
+</div>

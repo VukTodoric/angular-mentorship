@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { DialogModule } from './components/dialogs/dialog.module';
 
 @NgModule({
   declarations: [HomepageComponent, PageNotFoundComponent],
-  imports: [CommonModule, AppRoutingModule],
+  imports: [CommonModule, AppRoutingModule, DialogModule],
   exports: [],
 })
 export class FeaturesModule {}

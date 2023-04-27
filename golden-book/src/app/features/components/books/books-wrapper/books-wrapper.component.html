@@ -1,15 +1,19 @@
 <div class="search-filter-wrapper">
-  <app-search [placeholder]="searchPlaceholder"></app-search>
+  <app-search
+    [placeholder]="searchPlaceholder"
+    (searchResult)="storeSearch($event)"
+  ></app-search>
   <app-dropdown
     [placeholder]="filterPlaceholder"
     [selectField]="categoryArray"
+    (selectedValue)="storeCategory($event)"
   ></app-dropdown>
 </div>
 <div class="book-list-wrapper">
   <app-book-card
+    *ngFor="let book of booksArray"
     class="book-card"
     [fullVisibility]="false"
-    *ngFor="let book of booksArray"
     [book]="book"
     (delete)="getAllActiveBooks()"
     (softDelete)="getAllActiveBooks()"

@@ -1,13 +1,6 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject, map, switchMap, take, tap } from 'rxjs';
+import { take } from 'rxjs';
 import { BookDetails } from 'src/app/features/models/book.model';
 import { BookService } from 'src/app/features/services/book.service';
 

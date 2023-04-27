@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, filter, map, take, takeUntil, tap } from 'rxjs';
+import { Subject, map, take, takeUntil } from 'rxjs';
 import { BookDetails } from 'src/app/features/models/book.model';
 import { Category } from 'src/app/features/models/category.model';
 import { BookService } from 'src/app/features/services/book.service';
 import { CategoriesService } from 'src/app/features/services/categories.service';
+import { DialogSaveFilterComponent } from '../../dialogs/dialog-save-filter/dialog-save-filter.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-book',
@@ -15,12 +17,15 @@ export class BooksWrapperComponent implements OnInit {
   filterPlaceholder: string = 'Filter by Category';
   booksArray: BookDetails[] = [];
   categoryArray!: string[];
+  categoryName: string = '';
+  userSerch: string = '';
 
   private unsubscribe$ = new Subject<void>();
 
   constructor(
     private bookService: BookService,
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -50,8 +55,29 @@ export class BooksWrapperComponent implements OnInit {
       });
   }
 
+  storeCategory(categoryName: string) {
+    this.categoryName = categoryName;
+  }
+
+  storeSearch(search: string) {
+    this.userSerch = search;
+  }
+
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+    this.dialog
+      .open(DialogSaveFilterComponent)
+      .afterClosed()
+      .subscribe((shouldSave) => {
+        if (shouldSave) {
+          const filter = {
+            userSerch: this.userSerch,
+            categoryName: this.categoryName,
+          };
+          const filterToString = JSON.stringify(filter);
+          localStorage.setItem('filter', filterToString);
+        }
+      });
   }
 }

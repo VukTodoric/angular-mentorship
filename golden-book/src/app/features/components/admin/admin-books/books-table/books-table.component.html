@@ -1,0 +1,68 @@
+<div class="mat-elevation-z8 table-wrapper">
+  <table mat-table [dataSource]="booksArray">
+    <ng-container matColumnDef="imageSrc">
+      <th mat-header-cell *matHeaderCellDef>Image</th>
+      <td mat-cell *matCellDef="let element">
+        <span [matTooltip]="element.title">
+          <img [src]="element.imageSrc" [alt]="element.title" />
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td mat-cell *matCellDef="let element">
+        <span [matTooltip]="element.title">
+          {{ element.title }}
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef>Year</th>
+      <td mat-cell *matCellDef="let element">
+        <span [matTooltip]="element.year">{{ element.year }} </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef>Category</th>
+      <td mat-cell *matCellDef="let element">
+        <span [matTooltip]="element.category">
+          {{ element.category }}
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element">
+        <span matTooltip="Read more">
+          <a (click)="readMoreDialog(element)">Read more</a>
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="isbn">
+      <th mat-header-cell *matHeaderCellDef>ISBN</th>
+      <td mat-cell *matCellDef="let element">
+        <span [matTooltip]="element.isbn">
+          {{ element.isbn }}
+        </span>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="reviewer/review">
+      <th mat-header-cell *matHeaderCellDef>Reviewer/Review</th>
+      <td mat-cell *matCellDef="let element">
+        <span matTooltip="Review">
+          <p>{{ element.reviewer.review }}</p>
+        </span>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+
+  <mat-paginator
+    class="table-paginator"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>
