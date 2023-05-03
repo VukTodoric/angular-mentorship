@@ -1,1 +1,27 @@
+@import "../../../../assets/styles/variables.scss";
 
+::ng-deep .mat-dialog-container {
+  background-color: $gb-primary;
+  color: $gb-secondary;
+  text-align: justify;
+  min-width: 260px;
+  max-width: 500px;
+
+  .mat-dialog-content {
+    position: relative;
+    font-size: 0.85rem;
+    max-height: 400px;
+  }
+
+  .mat-dialog-actions {
+    button {
+      background-color: $gb-secondary;
+      color: $gb-primary;
+      padding: 0.5rem 0.5rem;
+      border-radius: 0.3rem;
+      font-size: 1rem;
+      margin: 1rem 0.5rem;
+      width: 4rem;
+    }
+  }
+}

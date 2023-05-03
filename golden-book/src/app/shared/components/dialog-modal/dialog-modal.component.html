@@ -1,4 +1,7 @@
-<h1 mat-dialog-title>Book Description</h1>
+<h1 mat-dialog-title>{{ title }}</h1>
 <div mat-dialog-content>
-  <ng-content></ng-content>
+  <ng-content select="[content]"></ng-content>
 </div>
+<mat-dialog-actions>
+  <ng-content select="[action]"></ng-content>
+</mat-dialog-actions>

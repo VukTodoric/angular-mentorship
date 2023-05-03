@@ -1,6 +1,8 @@
 <app-dialog-modal class="dialog-modal" [title]="'Book Description'">
-  <p>{{ data.description }}</p>
-  <mat-dialog-actions align="start">
+  <ng-container content>
+    <p>{{ data.description }}</p>
+  </ng-container>
+  <ng-container action>
     <button mat-button mat-dialog-close>Close</button>
-  </mat-dialog-actions>
+  </ng-container>
 </app-dialog-modal>

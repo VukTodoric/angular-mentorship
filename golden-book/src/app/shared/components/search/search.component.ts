@@ -24,4 +24,8 @@ export class SearchComponent implements OnInit {
   onSearchAction(input: HTMLInputElement) {
     this.searchResult.emit(input.value);
   }
+
+  onChange(input: HTMLInputElement) {
+    this.searchResult.emit(input.value);
+  }
 }
