@@ -6,9 +6,10 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { Observable, tap } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { BookDetailsComponent } from 'src/app/features/components/books/book-details/book-details.component';
 import { DialogLeavePageComponent } from 'src/app/features/components/dialogs/dialog-leave-page/dialog-leave-page.component';
+import { AuthService } from '../auth/services/auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,9 +17,13 @@ import { DialogLeavePageComponent } from 'src/app/features/components/dialogs/di
 export class ConfirmDeactivateGuard
   implements CanDeactivate<BookDetailsComponent>
 {
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private authService: AuthService) {}
 
   canDeactivate(): Observable<boolean> {
+    if (!this.authService.isAutheticated()) {
+      return of(true);
+    }
+
     const modal = this.dialog.open(DialogLeavePageComponent);
 
     const action$ = modal.afterClosed();

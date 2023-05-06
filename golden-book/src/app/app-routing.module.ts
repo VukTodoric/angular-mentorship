@@ -7,6 +7,7 @@ import { MainGridComponent } from './core/components/main-grid/main-grid.compone
 import { LoginComponent } from './core/auth/components/login/login.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { ConfirmDeactivateGuard } from './core/guards/confirm-deactivate.guard';
+import { SaveFiltersGuard } from './core/guards/save-filters.guard';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
         path: 'homepage',
         component: HomepageComponent,
         canActivate: [AuthGuard],
+        canDeactivate: [SaveFiltersGuard],
         children: [
           {
             path: '',

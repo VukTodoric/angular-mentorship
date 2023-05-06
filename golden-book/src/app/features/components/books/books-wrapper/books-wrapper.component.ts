@@ -4,7 +4,6 @@ import { BookDetails } from 'src/app/features/models/book.model';
 import { Category } from 'src/app/features/models/category.model';
 import { BookService } from 'src/app/features/services/book.service';
 import { CategoriesService } from 'src/app/features/services/categories.service';
-import { DialogSaveFilterComponent } from '../../dialogs/dialog-save-filter/dialog-save-filter.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -66,18 +65,5 @@ export class BooksWrapperComponent implements OnInit {
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
-    this.dialog
-      .open(DialogSaveFilterComponent)
-      .afterClosed()
-      .subscribe((shouldSave) => {
-        if (shouldSave) {
-          const filter = {
-            userSerch: this.userSerch,
-            categoryName: this.categoryName,
-          };
-          const filterToString = JSON.stringify(filter);
-          localStorage.setItem('filter', filterToString);
-        }
-      });
   }
 }
