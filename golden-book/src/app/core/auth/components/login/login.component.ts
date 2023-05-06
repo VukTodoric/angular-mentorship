@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Credentials } from '../../models/credentials.interface';
+import { LoginCredentials } from '../../models/credentials.interface';
 import { AuthService } from '../../services/auth.service';
 import { take } from 'rxjs';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  form: Credentials = {
+  form: LoginCredentials = {
     email: '',
     password: '',
   };

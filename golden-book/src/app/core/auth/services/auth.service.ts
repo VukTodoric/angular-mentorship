@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Credentials } from '../models/credentials.interface';
+import { LoginCredentials } from '../models/credentials.interface';
 import { tap } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -17,7 +17,7 @@ export class AuthService {
     return localStorage.getItem(this.storageKey) != null;
   }
 
-  login(user: Credentials) {
+  login(user: LoginCredentials) {
     return this.httpClient
       .get(
         `${environment.baseApiUrl}users?email=${user.email}&password=${user.password}`

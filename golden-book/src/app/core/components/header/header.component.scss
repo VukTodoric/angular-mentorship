@@ -37,16 +37,21 @@ header {
   }
 }
 
-::ng-deep .mat-menu-content {
-  background-color: $gb-primary;
+::ng-deep .mat-menu-panel {
+  min-height: fit-content !important;
 
-  button {
-    color: $gb-secondary;
-    display: flex;
-    align-items: center;
+  .mat-menu-content {
+    background-color: $gb-primary;
 
-    span {
-      margin-right: 0.5rem;
+    button {
+      color: $gb-secondary;
+      display: flex;
+      align-items: center;
+      height: 1.5rem;
+
+      span {
+        margin-right: 0.5rem;
+      }
     }
   }
 }
