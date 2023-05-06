@@ -1,0 +1,18 @@
+<div class="login-wrapper">
+  <form (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+    <input
+      type="email"
+      placeholder="Email"
+      name="email"
+      [(ngModel)]="form.email"
+    />
+    <input
+      type="password"
+      placeholder="Password"
+      name="password"
+      [(ngModel)]="form.password"
+    />
+    <button type="submit">Login</button>
+  </form>
+</div>

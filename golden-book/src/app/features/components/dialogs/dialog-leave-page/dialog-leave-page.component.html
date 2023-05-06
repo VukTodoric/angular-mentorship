@@ -1,0 +1,9 @@
+<app-dialog-modal
+  class="dialog-modal"
+  [title]="'Are sure you want to leave page?'"
+>
+  <ng-container action>
+    <button mat-button (click)="onOK()">Ok</button>
+    <button mat-button (click)="onCancel()">Cancel</button>
+  </ng-container>
+</app-dialog-modal>

@@ -13,10 +13,14 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    MatFormFieldModule,
     MatCardModule,
     MatGridListModule,
     MatInputModule,
@@ -30,9 +34,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTableModule,
     MatDialogModule,
     MatTooltipModule,
+    MatButtonModule,
+    MatMenuModule,
   ],
   exports: [
     MatCardModule,
+    MatFormFieldModule,
     MatGridListModule,
     MatInputModule,
     MatSelectModule,
@@ -45,6 +52,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTableModule,
     MatDialogModule,
     MatTooltipModule,
+    MatButtonModule,
+    MatMenuModule,
   ],
 })
 export class MaterialModule {}

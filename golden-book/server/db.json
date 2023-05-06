@@ -138,5 +138,25 @@
       "id": 4,
       "name": "History"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Petar",
+      "lastName": "Petrovic",
+      "country": "Serbia",
+      "role": "admin",
+      "email": "test@test.com",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "firstName": "Marko",
+      "lastName": "Markovic",
+      "country": "Serbia",
+      "role": "user",
+      "email": "test1@test.com",
+      "password": "1234"
+    }
   ]
 }

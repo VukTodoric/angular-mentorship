@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookDetails } from '../../../models/book.model';
 import { BookService } from 'src/app/features/services/book.service';
-import { Observer, map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-book-details',

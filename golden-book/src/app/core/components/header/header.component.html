@@ -6,8 +6,15 @@
       </app-button>
       <h1 class="logo">Golden Book.</h1>
     </div>
-    <div class="login-wrapper">
-      <span class="material-symbols-outlined"> account_box </span>
+    <div class="loginBtn-wrapper">
+      <span class="material-symbols-outlined" [matMenuTriggerFor]="menu">
+        account_box
+      </span>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onLogout()">
+          <span class="material-symbols-outlined"> logout </span> Logout
+        </button>
+      </mat-menu>
     </div>
   </nav>
 </header>

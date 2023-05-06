@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, throwError } from 'rxjs';
 import { BookDetails } from '../models/book.model';
 import { environment } from 'src/environments/environment';
-import { Category } from '../models/category.model';
 
 @Injectable({
   providedIn: 'root',
@@ -23,8 +22,12 @@ export class BookService {
   }
 
   getBookById(id: number): Observable<BookDetails> {
+    let headers = new HttpHeaders({ PageNumber: 'BookOverview' });
+    let option = { headers: headers };
+
     return this.httpClientService.get<BookDetails>(
-      `${environment.baseApiUrl}books/${id}`
+      `${environment.baseApiUrl}books/${id}`,
+      option
     );
   }
 

@@ -1,0 +1,36 @@
+@import "../../../../../assets/styles/variables.scss";
+
+.login-wrapper {
+  color: $gb-primary;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  form {
+    position: absolute;
+    top: 35%;
+
+    h2 {
+      margin: 1rem;
+    }
+
+    input,
+    button {
+      display: block;
+      height: 2rem;
+      width: 15rem;
+      margin: 1rem;
+      border-radius: 0.25rem;
+    }
+
+    input {
+      background-color: $gb-primary;
+      color: $gb-secondary;
+    }
+
+    button {
+      background-color: $gb-secondary;
+      color: $gb-primary;
+    }
+  }
+}

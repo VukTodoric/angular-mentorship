@@ -7,16 +7,25 @@ import { MainGridComponent } from './components/main-grid/main-grid.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { MaterialModule } from '../shared/material/material.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { LoginComponent } from './auth/components/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 const COMPONETS = [
   FooterComponent,
   HeaderComponent,
   MainGridComponent,
   SideBarComponent,
+  LoginComponent,
 ];
 @NgModule({
   declarations: [...COMPONETS],
-  imports: [CommonModule, SharedModule, MaterialModule, AppRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    MaterialModule,
+    AppRoutingModule,
+    FormsModule,
+  ],
   exports: [...COMPONETS],
 })
 export class CoreModule {}

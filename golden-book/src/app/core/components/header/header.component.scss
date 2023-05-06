@@ -30,5 +30,23 @@ header {
         margin-left: 1rem;
       }
     }
+
+    .loginBtn-wrapper {
+      cursor: pointer;
+    }
+  }
+}
+
+::ng-deep .mat-menu-content {
+  background-color: $gb-primary;
+
+  button {
+    color: $gb-secondary;
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 0.5rem;
+    }
   }
 }
