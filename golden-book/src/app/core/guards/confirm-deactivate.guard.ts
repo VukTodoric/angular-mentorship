@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import {
-  ActivatedRouteSnapshot,
-  CanDeactivate,
-  RouterStateSnapshot,
-  UrlTree,
-} from '@angular/router';
-import { Observable, of, tap } from 'rxjs';
+import { CanDeactivate } from '@angular/router';
+import { Observable, of } from 'rxjs';
 import { BookDetailsComponent } from 'src/app/features/components/books/book-details/book-details.component';
 import { DialogLeavePageComponent } from 'src/app/features/components/dialogs/dialog-leave-page/dialog-leave-page.component';
 import { AuthService } from '../auth/services/auth.service';

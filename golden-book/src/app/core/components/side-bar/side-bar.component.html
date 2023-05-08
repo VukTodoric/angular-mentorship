@@ -23,7 +23,7 @@
             </ng-container>
           </mat-expansion-panel>
         </mat-accordion>
-        <mat-accordion multi="true" class="menu-accordion">
+        <mat-accordion multi="true" class="menu-accordion" *ngIf="isAdmin">
           <mat-expansion-panel>
             <mat-expansion-panel-header>
               <a routerLinkActive="active-link"

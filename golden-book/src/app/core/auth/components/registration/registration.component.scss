@@ -1,6 +1,6 @@
 @import "../../../../../assets/styles/variables.scss";
 
-.login-wrapper {
+.registration-wrapper {
   color: $gb-primary;
   width: 100%;
   display: flex;
@@ -8,7 +8,7 @@
 
   form {
     position: absolute;
-    top: 30%;
+    top: 20%;
     letter-spacing: 2px;
     width: 18rem;
 
@@ -18,7 +18,8 @@
     }
 
     input,
-    button {
+    button,
+    select {
       display: block;
       height: 2rem;
       width: 100%;
@@ -26,7 +27,8 @@
       border-radius: 0.25rem;
     }
 
-    input {
+    input,
+    select {
       background-color: $gb-primary;
       color: $gb-secondary;
       padding-left: 0.5rem;

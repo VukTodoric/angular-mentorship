@@ -8,7 +8,8 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { MaterialModule } from '../shared/material/material.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { LoginComponent } from './auth/components/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegistrationComponent } from './auth/components/registration/registration.component';
 
 const COMPONETS = [
   FooterComponent,
@@ -16,6 +17,7 @@ const COMPONETS = [
   MainGridComponent,
   SideBarComponent,
   LoginComponent,
+  RegistrationComponent,
 ];
 @NgModule({
   declarations: [...COMPONETS],
@@ -25,6 +27,7 @@ const COMPONETS = [
     MaterialModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [...COMPONETS],
 })

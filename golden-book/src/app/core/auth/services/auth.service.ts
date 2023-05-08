@@ -1,9 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { LoginCredentials } from '../models/credentials.interface';
+import {
+  LoginCredentials,
+  RegistrationCredentials,
+} from '../models/credentials.interface';
 import { tap } from 'rxjs';
 import { Router } from '@angular/router';
+import { Role } from '../models/role.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +19,14 @@ export class AuthService {
 
   isAutheticated() {
     return localStorage.getItem(this.storageKey) != null;
+  }
+
+  isAdmin(): boolean {
+    return JSON.parse(localStorage.getItem('logged_user')!).role === Role.ADMIN;
+  }
+
+  registration(user: RegistrationCredentials) {
+    return this.httpClient.post(`${environment.baseApiUrl}users`, user);
   }
 
   login(user: LoginCredentials) {

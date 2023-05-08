@@ -2,17 +2,18 @@
   <mat-label>{{ placeholder }}</mat-label>
   <mat-select
     #option
-    multiple
+    [multiple]="!simpleDropdown"
     panelClass="dropdownPanel"
     (valueChange)="onChange($event)"
     [value]="defaultValue"
   >
+    <mat-option>{{ placeholder }}</mat-option>
     <mat-option *ngFor="let item of selectField" [value]="item">{{
       item
     }}</mat-option>
   </mat-select>
 </mat-form-field>
-<mat-chip-list>
+<mat-chip-list *ngIf="!simpleDropdown">
   <mat-chip *ngFor="let chip of option.value" [value]="chip">{{
     chip
   }}</mat-chip>

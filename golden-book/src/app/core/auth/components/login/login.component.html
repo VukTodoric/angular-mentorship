@@ -1,18 +1,17 @@
-<div class="login-wrapper">
-  <form (ngSubmit)="onSubmit()">
+<div class="login-wrapper bubble">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <h2>Login</h2>
-    <input
-      type="email"
-      placeholder="Email"
-      name="email"
-      [(ngModel)]="form.email"
-    />
-    <input
-      type="password"
-      placeholder="Password"
-      name="password"
-      [(ngModel)]="form.password"
-    />
-    <button type="submit">Login</button>
+    <input type="email" placeholder="Email" formControlName="email" />
+    <input type="password" placeholder="Password" formControlName="password" />
+    <button
+      type="submit"
+      [ngClass]="form.invalid ? 'disabled' : ''"
+      [disabled]="form.invalid"
+    >
+      Login
+    </button>
+    <p>
+      Or <a routerLink="/registration">Register</a> if you don't have account.
+    </p>
   </form>
 </div>

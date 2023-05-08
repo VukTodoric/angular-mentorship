@@ -8,6 +8,8 @@ import { LoginComponent } from './core/auth/components/login/login.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { ConfirmDeactivateGuard } from './core/guards/confirm-deactivate.guard';
 import { SaveFiltersGuard } from './core/guards/save-filters.guard';
+import { RegistrationComponent } from './core/auth/components/registration/registration.component';
+import { AdminGuard } from './core/guards/admin.guard';
 
 const routes: Routes = [
   {
@@ -42,7 +44,7 @@ const routes: Routes = [
       },
       {
         path: 'admin',
-        canLoad: [AuthGuard],
+        canLoad: [AuthGuard, AdminGuard],
         loadChildren: () =>
           import('./features/components/admin/admin.module').then(
             (module) => module.AdminModule
@@ -58,6 +60,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent,
   },
   {
     path: '**',

@@ -4,6 +4,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 import { CategoriesService } from 'src/app/features/services/categories.service';
 import { map, take } from 'rxjs';
 import { Category } from 'src/app/features/models/category.model';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -13,16 +14,23 @@ import { Category } from 'src/app/features/models/category.model';
 export class SideBarComponent implements OnInit {
   @ViewChild('drawer', { static: true }) drawer!: MatDrawer;
   categoryArray!: string[];
+  isAdmin?: boolean;
 
   constructor(
     private sidebarService: SidebarService,
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
     this.toggleMenu();
     this.categoriesService.setCategories();
     this.getAllCategories();
+    this.checkIsAdmin();
+  }
+
+  checkIsAdmin() {
+    this.isAdmin = this.authService.isAdmin();
   }
 
   getAllCategories() {
