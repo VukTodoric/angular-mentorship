@@ -8,6 +8,8 @@ import { MaterialModule } from './material/material.module';
 import { TableComponent } from './components/table/table.component';
 import { DialogModalComponent } from './components/dialog-modal/dialog-modal.component';
 import { ShowErrorDirective } from './directives/show-error.directive';
+import { ShortenPipe } from '../core/pipes/shorten.pipe';
+import { FormsModule } from '@angular/forms';
 
 const COMPONENTS = [
   DropdownComponent,
@@ -17,10 +19,11 @@ const COMPONENTS = [
   TableComponent,
   DialogModalComponent,
   ShowErrorDirective,
+  ShortenPipe,
 ];
 @NgModule({
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS],
-  imports: [CommonModule, MaterialModule],
+  imports: [CommonModule, MaterialModule, FormsModule],
 })
 export class SharedModule {}

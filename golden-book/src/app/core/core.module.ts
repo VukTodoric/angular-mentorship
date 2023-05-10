@@ -10,6 +10,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { LoginComponent } from './auth/components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './auth/components/registration/registration.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
 
 const COMPONETS = [
   FooterComponent,
