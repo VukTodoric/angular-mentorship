@@ -14,7 +14,7 @@
         <mat-card-content>
           <h6>BookId: {{ book.id }}</h6>
           <h6>
-            {{ book.firstName }} {{ book.lastName }},
+            {{ book | fullName }},
             {{ book.year | date : "YYYY" }}
           </h6>
           <h6>Country: {{ book.country }}</h6>
@@ -34,9 +34,7 @@
 
 <ng-template #partialDescription>
   <mat-card-content>
-    <h6>
-      {{ book.firstName }} {{ book.lastName }}, {{ book.year | date : "YYYY" }}
-    </h6>
+    <h6>{{ book | fullName }}, {{ book.year | date : "YYYY" }}</h6>
     <h6>Category: {{ book.category }}</h6>
     <p>{{ book.description | shorten : 56 }}</p>
   </mat-card-content>

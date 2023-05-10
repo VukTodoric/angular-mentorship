@@ -10,6 +10,7 @@ import { DialogModalComponent } from './components/dialog-modal/dialog-modal.com
 import { ShowErrorDirective } from './directives/show-error.directive';
 import { ShortenPipe } from '../core/pipes/shorten.pipe';
 import { FormsModule } from '@angular/forms';
+import { FullNamePipe } from '../core/pipes/full-name.pipe';
 
 const COMPONENTS = [
   DropdownComponent,
@@ -20,6 +21,7 @@ const COMPONENTS = [
   DialogModalComponent,
   ShowErrorDirective,
   ShortenPipe,
+  FullNamePipe,
 ];
 @NgModule({
   declarations: [...COMPONENTS],
