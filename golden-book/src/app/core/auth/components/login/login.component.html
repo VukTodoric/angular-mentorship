@@ -1,8 +1,24 @@
 <div class="login-wrapper bubble">
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <h2>Login</h2>
-    <input type="email" placeholder="Email" formControlName="email" />
-    <input type="password" placeholder="Password" formControlName="password" />
+    <div appShowError class="my-form-field">
+      <input
+        type="email"
+        required
+        placeholder="Email"
+        formControlName="email"
+      />
+    </div>
+    <div appShowError class="my-form-field">
+      <input
+        type="password"
+        required
+        pattern="[\W\w]+"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </div>
+
     <button
       type="submit"
       [ngClass]="form.invalid ? 'disabled' : ''"

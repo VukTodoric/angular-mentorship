@@ -7,7 +7,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { MaterialModule } from './material/material.module';
 import { TableComponent } from './components/table/table.component';
 import { DialogModalComponent } from './components/dialog-modal/dialog-modal.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ShowErrorDirective } from './directives/show-error.directive';
 
 const COMPONENTS = [
   DropdownComponent,
@@ -16,6 +16,7 @@ const COMPONENTS = [
   PaginationComponent,
   TableComponent,
   DialogModalComponent,
+  ShowErrorDirective,
 ];
 @NgModule({
   declarations: [...COMPONENTS],

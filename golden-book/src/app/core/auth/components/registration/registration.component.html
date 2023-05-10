@@ -1,27 +1,63 @@
 <div class="registration-wrapper bubble">
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <h2>Registration</h2>
-    <input type="text" placeholder="First Name" formControlName="firstName" />
-    <input type="text" placeholder="Last name" formControlName="lastName" />
-    <input type="email" placeholder="Email" formControlName="email" />
+    <div appShowError class="my-form-field">
+      <input
+        type="text"
+        required
+        pattern="[A-Z].{0,}"
+        placeholder="First Name"
+        formControlName="firstName"
+      />
+    </div>
+    <div appShowError class="my-form-field">
+      <input
+        type="text"
+        required
+        pattern="[A-Z].{0,}"
+        placeholder="Last name"
+        formControlName="lastName"
+      />
+    </div>
+    <div appShowError class="my-form-field">
+      <input
+        type="email"
+        required
+        placeholder="Email"
+        formControlName="email"
+      />
+    </div>
     <!-- <app-dropdown
-    [placeholder]="'Country'"
-    [simpleDropdown]="true"
-    [selectField]="test"
-    (selectedValue)="selectedCountry($event)"
-    ></app-dropdown> -->
+      [placeholder]="'Country'"
+      [simpleDropdown]="true"
+      [selectField]="test"
+      (selectedValue)="selectedCountry($event)"
+      ></app-dropdown> -->
     <select formControlName="countryId" (change)="selectedCountry($event)">
       <option [value]="">-- Please choose a country --</option>
       <option *ngFor="let country of test; let i = index" [value]="i + 1">
         {{ country }}
       </option>
     </select>
-    <input type="password" placeholder="Password" formControlName="password" />
-    <input
-      type="password"
-      placeholder="Confirm password"
-      formControlName="confirmPassword"
-    />
+    <div appShowError>
+      <input
+        type="password"
+        required
+        pattern="[\W\w]+"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </div>
+    <div appShowError class="my-form-field">
+      <input
+        type="password"
+        required
+        pattern="[\W\w]+"
+        placeholder="Confirm password"
+        formControlName="confirmPassword"
+      />
+    </div>
+
     <button
       type="submit"
       [ngClass]="

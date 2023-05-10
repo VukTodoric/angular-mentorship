@@ -137,6 +137,15 @@ $golden-book-theme: mat.define-light-theme(
     cursor: -moz-not-allowed;
     cursor: -webkit-not-allowed;
   }
+
+  .my-form-field {
+    margin: 1rem 0;
+  }
+
+  .alert {
+    color: crimson;
+    font-size: 11px;
+  }
 }
 
 @media only screen and (min-width: 1140px) {

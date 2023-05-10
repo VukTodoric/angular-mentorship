@@ -18,10 +18,12 @@ export class RegistrationComponent implements OnInit {
   countryIndex!: number;
   user!: RegistrationCredentials;
 
+  PATERN = /^[A-Z].{0,}$/;
+
   form: FormGroup = new FormGroup({
     firstName: new FormControl('', [
       Validators.required,
-      Validators.pattern(/^[A-Z].{0,}$/),
+      Validators.pattern(this.PATERN),
     ]),
     lastName: new FormControl('', [
       Validators.required,

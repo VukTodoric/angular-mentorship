@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginCredentials } from '../../models/credentials.interface';
 import { AuthService } from '../../services/auth.service';
 import { take } from 'rxjs';
-import {
-  AbstractControl,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
