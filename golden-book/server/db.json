@@ -139,7 +139,18 @@
       "name": "History"
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "firstName": "Vuk",
+      "lastName": "Todoric",
+      "countryId": 1,
+      "email": "test@test.com",
+      "password": "123",
+      "role": "User",
+      "createdAt": "2023-05-11T09:17:02.194Z",
+      "id": 1
+    }
+  ],
   "countries": [
     {
       "id": 1,
