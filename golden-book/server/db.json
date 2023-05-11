@@ -139,18 +139,7 @@
       "name": "History"
     }
   ],
-  "users": [
-    {
-      "firstName": "scs",
-      "lastName": "scsa",
-      "countryId": 1,
-      "email": "test@test.com",
-      "password": "1",
-      "role": "User",
-      "createdAt": "2023-05-08T19:37:07.282Z",
-      "id": 1
-    }
-  ],
+  "users": [],
   "countries": [
     {
       "id": 1,
