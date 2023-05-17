@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookCardComponent } from './book-card/book-card.component';
 import { MaterialModule } from 'src/app/shared/material/material.module';
-import { AddColorDirective } from '../../directives/add-color.directive';
 import { BooksWrapperComponent } from './books-wrapper/books-wrapper.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
@@ -18,7 +17,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     BookDetailsComponent,
-    AddColorDirective,
     BooksWrapperComponent,
     BookCardComponent,
   ],

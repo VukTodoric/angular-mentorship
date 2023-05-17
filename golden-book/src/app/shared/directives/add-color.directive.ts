@@ -1,5 +1,4 @@
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
-import { Category } from '../models/category.model';
 
 @Directive({
   selector: '[appAddColor]',
@@ -16,13 +15,13 @@ export class AddColorDirective implements OnInit {
   checkCategory() {
     switch (this.category) {
       case 'Fantasy':
-        this.el.nativeElement.classList.add('fantasy');
+        this.el.nativeElement.children[0].classList.add('fantasy');
         break;
       case 'History':
-        this.el.nativeElement.classList.add('history');
+        this.el.nativeElement.children[0].classList.add('history');
         break;
       case 'Literacy':
-        this.el.nativeElement.classList.add('literary');
+        this.el.nativeElement.children[0].classList.add('literary');
         break;
     }
   }

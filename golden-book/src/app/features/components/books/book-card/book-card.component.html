@@ -1,11 +1,6 @@
-<mat-card
-  role="article"
-  class="golden-card primary-layout"
-  appAddColor
-  [category]="book.category"
->
-  <h5>{{ book.title | titlecase }}</h5>
-  <div class="content-wrapper">
+<app-card class="golden-card" appAddColor [category]="book.category">
+  <h5 title>{{ book.title | titlecase }}</h5>
+  <div body class="content-wrapper">
     <div class="img-wrapper">
       <img [src]="book.imageSrc" [alt]="book.title" />
     </div>
@@ -30,7 +25,7 @@
       </div>
     </div>
   </div>
-</mat-card>
+</app-card>
 
 <ng-template #partialDescription>
   <mat-card-content>

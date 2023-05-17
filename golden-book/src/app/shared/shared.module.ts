@@ -11,6 +11,8 @@ import { ShowErrorDirective } from './directives/show-error.directive';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FormsModule } from '@angular/forms';
 import { FullNamePipe } from './pipes/full-name.pipe';
+import { CardComponent } from './components/card/card.component';
+import { AddColorDirective } from './directives/add-color.directive';
 
 const COMPONENTS = [
   DropdownComponent,
@@ -19,13 +21,15 @@ const COMPONENTS = [
   PaginationComponent,
   TableComponent,
   DialogModalComponent,
-  ShowErrorDirective,
-  ShortenPipe,
-  FullNamePipe,
+  CardComponent,
 ];
+
+const DIRECTIVES = [ShowErrorDirective, AddColorDirective];
+
+const PIPES = [ShortenPipe, FullNamePipe];
 @NgModule({
-  declarations: [...COMPONENTS],
-  exports: [...COMPONENTS],
+  declarations: [...COMPONENTS, ...DIRECTIVES, ...PIPES],
+  exports: [...COMPONENTS, ...DIRECTIVES, ...PIPES],
   imports: [CommonModule, MaterialModule, FormsModule],
 })
 export class SharedModule {}

@@ -138,5 +138,39 @@
       "id": 4,
       "name": "History"
     }
+  ],
+  "users": [
+    {
+      "firstName": "Vuk",
+      "lastName": "Todoric",
+      "countryId": 1,
+      "email": "test@test.com",
+      "password": "123",
+      "role": "User",
+      "createdAt": "2023-05-11T09:17:02.194Z",
+      "id": 1
+    }
+  ],
+  "countries": [
+    {
+      "id": 1,
+      "country": "Austrija"
+    },
+    {
+      "id": 2,
+      "country": "Belgija"
+    },
+    {
+      "id": 3,
+      "country": "Centralno Africka Republika"
+    },
+    {
+      "id": 4,
+      "country": "Danska"
+    },
+    {
+      "id": 5,
+      "country": "Srbija"
+    }
   ]
 }
