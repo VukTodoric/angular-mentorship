@@ -8,9 +8,9 @@ import { MaterialModule } from './material/material.module';
 import { TableComponent } from './components/table/table.component';
 import { DialogModalComponent } from './components/dialog-modal/dialog-modal.component';
 import { ShowErrorDirective } from './directives/show-error.directive';
-import { ShortenPipe } from '../core/pipes/shorten.pipe';
+import { ShortenPipe } from './pipes/shorten.pipe';
 import { FormsModule } from '@angular/forms';
-import { FullNamePipe } from '../core/pipes/full-name.pipe';
+import { FullNamePipe } from './pipes/full-name.pipe';
 
 const COMPONENTS = [
   DropdownComponent,

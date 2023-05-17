@@ -34,7 +34,7 @@
       (selectedValue)="selectedCountry($event)"
       ></app-dropdown> -->
     <select formControlName="countryId" (change)="selectedCountry($event)">
-      <option [value]="">-- Please choose a country --</option>
+      <option [value]="selectPlaceholder">-- Please choose a country --</option>
       <option *ngFor="let country of test; let i = index" [value]="i + 1">
         {{ country }}
       </option>

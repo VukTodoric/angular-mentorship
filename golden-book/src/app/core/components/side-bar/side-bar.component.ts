@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SidebarService } from '../../services/sidebar.service';
 import { MatDrawer } from '@angular/material/sidenav';
 import { CategoriesService } from 'src/app/features/services/categories.service';

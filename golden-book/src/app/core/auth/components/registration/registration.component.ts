@@ -17,6 +17,7 @@ export class RegistrationComponent implements OnInit {
   test: string[] = [];
   countryIndex!: number;
   user!: RegistrationCredentials;
+  selectPlaceholder: string = '-- Please choose a country --';
 
   PATERN = /^[A-Z].{0,}$/;
 
@@ -30,7 +31,7 @@ export class RegistrationComponent implements OnInit {
       Validators.pattern(/^[A-Z].{0,}$/),
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    countryId: new FormControl('-- Please choose a country --'),
+    countryId: new FormControl(this.selectPlaceholder),
     password: new FormControl('', [
       Validators.required,
       Validators.pattern(/[\W\w]+/),
